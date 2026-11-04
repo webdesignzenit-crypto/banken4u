@@ -1,0 +1,94 @@
+{
+  "slug": "ratenkredit",
+  "group": "weitere",
+  "navTitle": "Ratenkredit",
+  "navText": "Für Auto, Küche oder um teure Kredite abzulösen",
+  "metaTitle": "Ratenkredit für Auto und Umschuldung | Banken4U",
+  "metaDescription": "Ratenkredit fürs Auto, die neue Küche oder die Ablösung Ihres Dispos. Ich hole Angebote mehrerer Banken ein und rechne mit Ihnen, welche Rate tragbar ist.",
+  "kicker": "Anschaffen oder teure Schulden ablösen",
+  "title": "Ratenkredit mit fester Rate und klarer Laufzeit",
+  "lead": "Ein Ratenkredit soll eine Anschaffung leichter machen und Ihnen nicht jeden Monat den Schlaf rauben. Deshalb schauen wir zuerst auf Ihr Budget und erst dann auf den Zins.",
+  "intro": [
+    "Bei einem Ratenkredit leihen Sie sich einen festen Betrag und zahlen ihn in gleichen Monatsraten zurück. Zins und Laufzeit stehen von Anfang an fest. So kennen Sie schon bei der Unterschrift den Monat der letzten Rate und die Kosten insgesamt. Eine Immobilie als Sicherheit brauchen Sie dafür nicht.",
+    "Bevor ich Angebote einhole, legen wir Ihre Einnahmen neben die festen Ausgaben, von der Miete bis zur Tankrechnung. Banken setzen an dieser Stelle Pauschalen für die Lebenshaltung an. Ich nehme lieber Ihre echten Zahlen, denn die Rate muss auch in einem Monat mit Autoreparatur noch drin sein. Würde es zu knapp, erfahren Sie das von mir vor dem Antrag und nicht erst aus der Absage einer Bank."
+  ],
+  "introTitle": "Was am Monatsende übrig bleibt.",
+  "highlights": [
+    {
+      "title": "Rate mit Luft",
+      "text": "Die Rate wird so gewählt, dass auch eine unerwartete Rechnung im Monat noch Platz hat."
+    },
+    {
+      "title": "Erst Konditionen, dann Antrag",
+      "text": "Zum Vergleichen genügen Anfragen zu Kreditkonditionen. Andere Banken bekommen davon nichts mit."
+    },
+    {
+      "title": "Früher fertig werden",
+      "text": "Ganz oder teilweise vorzeitig zurückzahlen dürfen Sie jederzeit. Was die Bank dafür verlangen darf, ist gesetzlich gedeckelt."
+    },
+    {
+      "title": "Ordnung bei alten Krediten",
+      "text": "Ein Dispo im Dauerminus und mehrere kleine Kredite lassen sich oft in einer einzigen Rate zusammenfassen."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Laufzeit und Zweck gehören zusammen",
+      "paragraphs": [
+        "Ein Auto, das Sie sechs Jahre fahren möchten, sollte nicht acht Jahre lang abbezahlt werden. Als Faustregel gilt, dass der Kredit nicht länger laufen sollte, als die Anschaffung hält. Eine kürzere Laufzeit heißt höhere Rate, aber spürbar weniger Zinsen über alles gerechnet.",
+        "Sagen Sie der Bank, wofür Sie das Geld brauchen. Für einen Autokredit gibt es manchmal günstigere Konditionen als für einen freien Kredit. Manche Banken behalten dafür die Zulassungsbescheinigung Teil II, bis der Wagen bezahlt ist.",
+        "Bei Küche und Möbeln werben Händler gern mit einer Finanzierung zu null Prozent. Das kann sich rechnen. Schauen Sie aber nach, ob dahinter ein Kreditrahmen oder eine Karte steckt, die für spätere Einkäufe teuer wird, und ob Sie beim Barkauf einen Rabatt bekommen hätten."
+      ]
+    },
+    {
+      "heading": "Wenn der Dispo zum Dauerzustand geworden ist",
+      "paragraphs": [
+        "Steht Ihr Girokonto seit Monaten fast durchgehend im Minus, zahlen Sie Dispozinsen, die meist weit über denen eines Ratenkredits liegen. Weil keine feste Rückzahlung vereinbart ist, wird das Minus kaum kleiner. Ein Ratenkredit löst den Dispo ab und setzt ein festes Ende.",
+        "Danach braucht es eine zweite Entscheidung. Lassen Sie den Dispo-Rahmen bei Ihrer Bank herabsetzen, sonst ist er schnell wieder ausgeschöpft und Sie zahlen zwei Kredite statt einem.",
+        "Ähnlich ist es mit mehreren kleinen Verträgen, etwa der Finanzierung vom Möbelhaus und einer Kreditkarte in Teilzahlung. Zusammengelegt werden sie übersichtlicher. Ob sie auch billiger werden, hängt von den alten Zinsen ab und davon, was die Ablösung kostet. Bleibt am Ende nichts übrig, lassen wir es."
+      ]
+    },
+    {
+      "heading": "Was im Kleingedruckten zählt",
+      "paragraphs": [
+        "Vergleichen sollten Sie den effektiven Jahreszins. Er enthält neben dem Sollzins alle Kosten, ohne die es den Kredit nicht gibt. In der Werbung steht oft ein Ab-Zins für Antragsteller mit sehr guter Bonität. Aussagekräftiger ist das Beispiel im Kleingedruckten, denn diesen oder einen niedrigeren Zins sollen nach Erwartung der Bank mindestens zwei Drittel der Kunden bekommen.",
+        "Häufig liegt dem Angebot eine Restschuldversicherung bei. Weil sie freiwillig ist, taucht ihr Preis im effektiven Jahreszins nicht auf. Oft wird der Beitrag auf einmal fällig und mitfinanziert, sodass Sie auch auf die Versicherung Zinsen zahlen."
+      ],
+      "bullets": [
+        "Was Sie über die ganze Laufzeit zurückzahlen, nicht nur die Monatsrate",
+        "Ob Sondertilgungen ohne Entschädigung möglich sind",
+        "Ob es eine Ratenpause oder eine Ratenänderung gibt, falls es einmal eng wird"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Fragt die Bank bei der SCHUFA nach?",
+      "a": "Ja, spätestens beim Antrag. Zum Vergleichen genügt aber eine Anfrage zu Kreditkonditionen. Diese Anfrage sehen nur Sie selbst in Ihrer Auskunft, und in Ihren Score fließt sie nicht ein. Eine Kreditanfrage dagegen können auch andere Banken sehen. Sie wird erst gestellt, wenn Sie sich für ein Angebot entschieden haben. Mehr dazu steht in meinem Ratgeber zur SCHUFA-Auskunft."
+    },
+    {
+      "q": "Darf ich den Kredit früher zurückzahlen?",
+      "a": "Ja, jederzeit ganz oder in Teilen. Die Bank darf dafür eine Vorfälligkeitsentschädigung verlangen, höchstens aber 1 Prozent des vorzeitig gezahlten Betrags. Bleibt bis zum vereinbarten Ende nur noch ein Jahr oder weniger, sind es höchstens 0,5 Prozent. Manche Banken verzichten ganz darauf."
+    },
+    {
+      "q": "Brauche ich eine Restschuldversicherung?",
+      "a": "Meist nicht, denn sie ist in aller Regel freiwillig. Macht eine Bank sie ausnahmsweise zur Bedingung, gehören ihre Kosten in den effektiven Jahreszins. Sinnvoll sein kann sie, wenn Ihre Familie die Rate bei Krankheit oder Arbeitslosigkeit nicht allein tragen könnte. Prüfen Sie aber kritisch, ob Sie schon anders abgesichert sind. Für den Todesfall ist eine Risikolebensversicherung oft die günstigere Lösung."
+    },
+    {
+      "q": "Kann ich nach der Unterschrift noch zurück?",
+      "a": "Ja, 14 Tage lang. So lange haben Sie bei einem Verbraucherkredit ein gesetzliches Widerrufsrecht, ohne Gründe nennen zu müssen. Die Frist beginnt in der Regel mit Vertragsschluss, aber erst, wenn Ihnen alle Pflichtangaben vorliegen."
+    },
+    {
+      "q": "Welche Unterlagen braucht die Bank?",
+      "a": "Meist Ihren Ausweis, die letzten Gehaltsabrechnungen und Kontoauszüge. Selbstständige reichen statt der Gehaltsabrechnungen Steuerbescheide und eine aktuelle betriebswirtschaftliche Auswertung ein. Vieles läuft heute digital, etwa mit Video-Ident."
+    }
+  ],
+  "faqNote": "Liegt Ihnen schon ein Kreditangebot vor, lesen Sie mir am Telefon einfach die Eckdaten vor.",
+  "ctaTitle": "Ihre Rate, einmal in Ruhe durchgerechnet",
+  "ctaText": "Sagen Sie mir, was Sie anschaffen oder ablösen möchten und welche Rate sich für Sie gut anfühlt. Ich hole Angebote ein und zeige Ihnen bei jedem, was Sie am Ende insgesamt zurückzahlen.",
+  "related": [
+    "baufinanzierung/modernisierung",
+    "geldanlage",
+    "versicherungen"
+  ]
+}

@@ -1,0 +1,2424 @@
+# Bearbeitungsbereich für banken4u.de (Decap CMS)
+# Anmeldung: E-Mail und Passwort über Netlify Identity, Speichern über Git Gateway.
+# Jede Veröffentlichung speichert die Datei im Repository; Netlify baut die Seite danach neu (ca. 1–2 Minuten).
+# Diese Datei wird aus scripts/cms-config.src.yml erzeugt (python3 scripts/build-cms-config.py).
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Neu: {{collection}} „{{slug}}“'
+    update: 'Geändert: {{collection}} „{{slug}}“'
+    delete: 'Gelöscht: {{collection}} „{{slug}}“'
+    uploadMedia: 'Bild hochgeladen: {{path}}'
+    deleteMedia: 'Bild gelöscht: {{path}}'
+local_backend: true
+locale: de
+site_url: https://banken4u.de
+display_url: https://banken4u.de
+logo_url: /img/logo-192.webp
+publish_mode: simple
+show_preview_links: false
+media_folder: public/img/uploads
+public_folder: /img/uploads
+collections:
+- name: startseite
+  label: Startseite
+  editor:
+    preview: false
+  files:
+  - name: startseite
+    label: Startseite
+    file: content/startseite.json
+    fields:
+    - label: Großes Titelbild oben
+      name: hero
+      widget: object
+      fields:
+      - label: Kleine Zeile über dem Slogan
+        name: kicker
+        widget: string
+      - label: Slogan Zeile 1
+        name: zeile1
+        widget: string
+      - label: Slogan Zeile 2
+        name: zeile2
+        widget: string
+      - label: Slogan Zeile 2 (rot hervorgehoben)
+        name: zeile2Betont
+        widget: string
+      - label: Text unter dem Slogan
+        name: text
+        widget: text
+      - label: Knopf Rückruf
+        name: buttonRueckruf
+        widget: string
+      - label: Knopf Angebot
+        name: buttonAngebot
+        widget: string
+    - label: Vorstellung
+      name: vorstellung
+      widget: object
+      fields:
+      - label: Kleine Zeile
+        name: kicker
+        widget: string
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Punkte
+        name: punkte
+        widget: list
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      - label: Bildunterschrift
+        name: bildunterschrift
+        widget: string
+      - label: Zusatz unter dem Namen
+        name: unterschriftZusatz
+        widget: string
+    - label: Zahlen (Beschriftungen)
+      name: zahlen
+      widget: object
+      hint: Die Zahlen selbst stehen unter „Allgemeine Angaben“.
+      fields:
+      - label: Banken
+        name: banken
+        widget: string
+      - label: Versicherer
+        name: versicherer
+        widget: string
+      - label: Jahre
+        name: jahre
+        widget: string
+      - label: Bewertung
+        name: bewertung
+        widget: string
+    - label: Leistungen
+      name: leistungen
+      widget: object
+      fields:
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Text im Baufinanzierungs-Kasten
+        name: schwerpunktText
+        widget: text
+      - label: Hinweis im Baufinanzierungs-Kasten
+        name: hinweis
+        widget: text
+      - label: Ratenkredit
+        name: ratenkredit
+        widget: text
+      - label: Bausparen
+        name: bausparen
+        widget: text
+      - label: Geldanlage
+        name: geldanlage
+        widget: text
+      - label: Versicherungen
+        name: versicherungen
+        widget: text
+    - label: Ablauf
+      name: ablauf
+      widget: object
+      fields:
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Text auf dem Bild
+        name: bildtext
+        widget: string
+      - label: Schritte
+        name: schritte
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Titel
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+        label_singular: Schritt
+    - label: Bewertungen
+      name: bewertungen
+      widget: object
+      fields:
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Zeile unter den Sternen
+        name: zusatz
+        widget: string
+    - label: Vergütung
+      name: verguetung
+      widget: object
+      fields:
+      - label: Kleine Zeile
+        name: kicker
+        widget: string
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Überschrift (hervorgehoben)
+        name: titelBetont
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Punkte
+        name: punkte
+        widget: list
+        summary: '{{fields.title}}'
+        fields:
+        - label: Titel
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+        label_singular: Punkt
+    - label: Rechner
+      name: rechner
+      widget: object
+      fields:
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: Kontakt unten
+      name: kontakt
+      widget: object
+      fields:
+      - label: Kleine Zeile
+        name: kicker
+        widget: string
+      - label: Überschrift
+        name: titel
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+- name: leistungen
+  label: Leistungsseiten
+  editor:
+    preview: false
+  files:
+  - name: bau-uebersicht
+    label: Baufinanzierung (Übersicht)
+    file: content/leistungen/bau-uebersicht.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: immobilienkauf
+    label: 'Baufinanzierung: Immobilienkauf'
+    file: content/leistungen/immobilienkauf.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: neubau
+    label: 'Baufinanzierung: Neubau'
+    file: content/leistungen/neubau.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: anschlussfinanzierung
+    label: 'Baufinanzierung: Anschlussfinanzierung'
+    file: content/leistungen/anschlussfinanzierung.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: umschuldung
+    label: 'Baufinanzierung: Umschuldung'
+    file: content/leistungen/umschuldung.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: foerderkredite
+    label: 'Baufinanzierung: Förderkredite'
+    file: content/leistungen/foerderkredite.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: modernisierung
+    label: 'Baufinanzierung: Modernisierung'
+    file: content/leistungen/modernisierung.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: ratenkredit
+    label: Ratenkredit
+    file: content/leistungen/ratenkredit.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: bausparen
+    label: Bausparen
+    file: content/leistungen/bausparen.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: geldanlage
+    label: Geldanlage
+    file: content/leistungen/geldanlage.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+  - name: versicherungen
+    label: Versicherungen
+    file: content/leistungen/versicherungen.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Gruppe
+      name: group
+      widget: hidden
+    - label: Verwandte Seiten
+      name: related
+      widget: hidden
+    - label: Name im Menü
+      name: navTitle
+      widget: string
+    - label: Kurzbeschreibung (Menü und Karten)
+      name: navText
+      widget: string
+      hint: Höchstens ca. 50 Zeichen
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Hauptüberschrift
+      name: title
+      widget: string
+      hint: Höchstens ca. 50 Zeichen, sonst bricht sie in drei Zeilen um
+    - label: Einleitung unter der Überschrift
+      name: lead
+      widget: text
+    - label: Kopfbild
+      name: heroImage
+      widget: image
+      required: false
+      hint: Leer lassen = Standardbild. Querformat, mindestens 2400 Pixel breit.
+    - label: Überschrift neben dem Einstieg
+      name: introTitle
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Einstiegstext
+      name: intro
+      label_singular: Absatz
+    - label: Vorteile (3 oder 4)
+      name: highlights
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Vorteil
+    - label: Abschnitte
+      name: sections
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: string
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: Ablauf
+      name: steps
+      widget: list
+      required: false
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Schritt
+    - label: Häufige Fragen
+      name: faqs
+      widget: list
+      summary: '{{fields.q}}'
+      fields:
+      - label: Frage
+        name: q
+        widget: string
+      - label: Antwort
+        name: a
+        widget: text
+      label_singular: Frage
+    - label: Satz neben den häufigen Fragen
+      name: faqNote
+      widget: string
+    - label: Einleitung über den Abschluss-Links
+      name: linksText
+      widget: text
+      required: false
+    - label: Abschluss-Links
+      name: links
+      widget: list
+      required: false
+      summary: '{{fields.label}}'
+      hint: Direkte Online-Abschlüsse bei Partnern. Öffnen sich in einem neuen Fenster.
+      fields:
+      - label: Linktext
+        name: label
+        widget: string
+      - label: Adresse (https://…)
+        name: href
+        widget: string
+      - label: Kurze Beschreibung
+        name: text
+        widget: string
+        required: false
+      label_singular: Link
+    - label: Überschrift im Abschlussbereich
+      name: ctaTitle
+      widget: string
+    - label: Text im Abschlussbereich
+      name: ctaText
+      widget: text
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+      hint: Höchstens 60 Zeichen
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+      hint: 140 bis 155 Zeichen
+- name: ratgeber
+  label: Ratgeber-Artikel
+  label_singular: Ratgeber-Artikel
+  folder: content/ratgeber
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  summary: '{{title}}'
+  sortable_fields:
+  - order
+  - title
+  editor:
+    preview: false
+  fields:
+  - label: Reihenfolge
+    name: order
+    widget: number
+    value_type: int
+    default: 10
+    hint: Kleine Zahl = weiter vorn in der Übersicht
+  - label: Adresse (z. B. kaufnebenkosten-sachsen)
+    name: slug
+    widget: string
+    pattern:
+    - ^[a-z0-9-]+$
+    - Nur Kleinbuchstaben, Zahlen und Bindestriche, keine Umlaute
+    hint: 'Wird Teil der Internetadresse: banken4u.de/ratgeber/…. Nach dem ersten Speichern nicht mehr ändern.'
+  - label: Überschrift
+    name: title
+    widget: string
+  - label: Einleitung
+    name: lead
+    widget: text
+  - label: Lesezeit in Minuten
+    name: readingMinutes
+    widget: number
+    value_type: int
+    default: 5
+  - label: Stand (z. B. November 2026)
+    name: updated
+    widget: string
+  - label: Bild
+    name: image
+    widget: image
+    required: false
+    hint: Querformat, mindestens 2400 Pixel breit
+  - label: Abschnitte
+    name: sections
+    widget: list
+    summary: '{{fields.heading}}'
+    fields:
+    - label: Überschrift
+      name: heading
+      widget: string
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Absätze
+      name: paragraphs
+      label_singular: Absatz
+    - label: Aufzählung
+      name: bullets
+      widget: list
+      required: false
+      field:
+        label: Punkt
+        name: punkt
+        widget: string
+      label_singular: Punkt
+    label_singular: Abschnitt
+  - label: Das Wichtigste in Kürze
+    name: takeaway
+    widget: list
+    field:
+      label: Punkt
+      name: punkt
+      widget: text
+    label_singular: Punkt
+  - label: Häufige Fragen
+    name: faqs
+    widget: list
+    summary: '{{fields.q}}'
+    fields:
+    - label: Frage
+      name: q
+      widget: string
+    - label: Antwort
+      name: a
+      widget: text
+    required: false
+    label_singular: Frage
+  - label: 'Google: Seitentitel'
+    name: metaTitle
+    widget: string
+    hint: Höchstens 60 Zeichen, endet mit „ | Banken4U“
+  - label: 'Google: Beschreibung'
+    name: metaDescription
+    widget: text
+    hint: 140 bis 155 Zeichen
+- name: ueber-mich
+  label: Über mich
+  editor:
+    preview: false
+  files:
+  - name: ueber-mich
+    label: Über mich
+    file: content/ueber-mich.json
+    fields:
+    - label: Kleine Zeile über der Überschrift
+      name: kicker
+      widget: string
+    - label: Überschrift
+      name: title
+      widget: string
+    - label: Einleitung
+      name: lead
+      widget: text
+    - widget: list
+      field:
+        label: Absatz
+        name: absatz
+        widget: text
+      label: Meine Geschichte
+      name: story
+      label_singular: Absatz
+    - label: Leitsatz (Zitat)
+      name: quote
+      widget: text
+    - label: Überschrift Werdegang
+      name: wegTitel
+      widget: string
+    - label: Text Werdegang
+      name: wegText
+      widget: string
+    - label: Stationen
+      name: milestones
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Station
+    - label: Überschrift Arbeitsweise
+      name: arbeitTitel
+      widget: string
+    - label: Text Arbeitsweise
+      name: arbeitText
+      widget: string
+    - label: Grundsätze
+      name: principles
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Grundsatz
+    - label: Überschrift unten
+      name: ctaTitel
+      widget: string
+    - label: Text unten
+      name: ctaText
+      widget: text
+    - label: Was Kunden schätzen (Seite Bewertungen)
+      name: reviewThemes
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Punkt
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+- name: bewertungen
+  label: Kundenstimmen
+  editor:
+    preview: false
+  files:
+  - name: bewertungen
+    label: Kundenstimmen (Startseite und Bewertungsseite)
+    file: content/bewertungen.json
+    fields:
+    - label: Stimmen
+      name: reviews
+      widget: list
+      summary: '{{fields.name}}: {{fields.title}}'
+      hint: Nur echte Bewertungen mit Einverständnis verwenden.
+      fields:
+      - label: Name (z. B. Zlatko V.)
+        name: name
+        widget: string
+      - label: Datum (z. B. Januar 2022)
+        name: date
+        widget: string
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      label_singular: Stimme
+- name: seiten
+  label: Weitere Seiten
+  editor:
+    preview: false
+  files:
+  - name: seiten
+    label: Kontakt, Angebot, Rechner, Bewertungen, Ratgeber, Danke
+    file: content/seiten.json
+    fields:
+    - label: Kontakt
+      name: kontakt
+      widget: object
+      fields:
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+    - label: Angebot anfordern
+      name: angebot
+      widget: object
+      fields:
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+    - label: Rechner
+      name: rechner
+      widget: object
+      fields:
+      - label: Kleine Zeile
+        name: kicker
+        widget: string
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+    - label: Bewertungen
+      name: bewertungen
+      widget: object
+      fields:
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: Text über den Kundenstimmen
+        name: stimmenText
+        widget: string
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+    - label: Ratgeber-Übersicht
+      name: ratgeber
+      widget: object
+      fields:
+      - label: Kleine Zeile
+        name: kicker
+        widget: string
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+    - label: Danke-Seite nach Anfrage
+      name: danke
+      widget: object
+      fields:
+      - label: Überschrift
+        name: title
+        widget: string
+      - label: Einleitung
+        name: lead
+        widget: text
+      - label: 'Google: Seitentitel'
+        name: metaTitle
+        widget: string
+      - label: 'Google: Beschreibung'
+        name: metaDescription
+        widget: text
+- name: allgemein
+  label: Allgemeine Angaben
+  editor:
+    preview: false
+  files:
+  - name: allgemein
+    label: Kontaktdaten, Öffnungszeiten, Kennzahlen
+    file: content/allgemein.json
+    fields:
+    - label: Firmenname
+      name: name
+      widget: string
+    - label: Inhaberin
+      name: owner
+      widget: string
+    - label: Berufsbezeichnung
+      name: role
+      widget: string
+    - label: Internetadresse
+      name: url
+      widget: hidden
+    - label: Telefon
+      name: phone
+      widget: string
+    - label: Mobil
+      name: mobile
+      widget: string
+    - label: E-Mail
+      name: email
+      widget: string
+    - label: Persönliche E-Mail
+      name: emailPersonal
+      widget: string
+    - label: E-Mail private Krankenversicherung
+      name: emailPkv
+      widget: string
+    - label: Straße
+      name: street
+      widget: string
+    - label: PLZ
+      name: zip
+      widget: string
+    - label: Ort
+      name: city
+      widget: string
+    - label: Region
+      name: region
+      widget: string
+    - label: Öffnungszeiten
+      name: hours
+      widget: list
+      summary: '{{fields.days}}: {{fields.time}}'
+      fields:
+      - label: Tage
+        name: days
+        widget: string
+      - label: Uhrzeit
+        name: time
+        widget: string
+      label_singular: Zeile
+    - label: Hinweis zu Terminen
+      name: hoursNote
+      widget: string
+    - label: Anzahl Banken und Bausparkassen
+      name: banks
+      widget: string
+    - label: Anzahl Versicherungsgesellschaften
+      name: insurers
+      widget: string
+    - label: Jahre Erfahrung
+      name: years
+      widget: string
+    - label: Bewertung (z. B. 5,0)
+      name: rating
+      widget: string
+    - label: Anzahl Bewertungen
+      name: ratingCount
+      widget: string
+    - label: Bewertungsportale
+      name: reviewLinks
+      widget: object
+      fields:
+      - label: KennstDuEinen
+        name: kennstDuEinen
+        widget: string
+      - label: ImmobilienScout24
+        name: immoscout
+        widget: string
+- name: rechtstexte
+  label: Rechtstexte
+  editor:
+    preview: false
+  files:
+  - name: impressum
+    label: Impressum
+    file: content/rechtstexte/impressum.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Überschrift
+      name: title
+      widget: string
+    - label: Hinweis oben
+      name: note
+      widget: text
+      required: false
+    - label: Abschnitte
+      name: blocks
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: text
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+  - name: datenschutz
+    label: Datenschutzerklärung
+    file: content/rechtstexte/datenschutz.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Überschrift
+      name: title
+      widget: string
+    - label: Hinweis oben
+      name: note
+      widget: text
+      required: false
+    - label: Abschnitte
+      name: blocks
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: text
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text
+  - name: erstinformation
+    label: Erstinformation
+    file: content/rechtstexte/erstinformation.json
+    fields:
+    - label: Interne Kennung
+      name: slug
+      widget: hidden
+    - label: Überschrift
+      name: title
+      widget: string
+    - label: Hinweis oben
+      name: note
+      widget: text
+      required: false
+    - label: Abschnitte
+      name: blocks
+      widget: list
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Überschrift
+        name: heading
+        widget: string
+      - widget: list
+        field:
+          label: Absatz
+          name: absatz
+          widget: text
+        label: Absätze
+        name: paragraphs
+        label_singular: Absatz
+      - label: Aufzählung
+        name: bullets
+        widget: list
+        required: false
+        field:
+          label: Punkt
+          name: punkt
+          widget: text
+        label_singular: Punkt
+      label_singular: Abschnitt
+    - label: 'Google: Seitentitel'
+      name: metaTitle
+      widget: string
+    - label: 'Google: Beschreibung'
+      name: metaDescription
+      widget: text

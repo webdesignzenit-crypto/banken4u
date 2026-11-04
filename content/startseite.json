@@ -1,0 +1,98 @@
+{
+  "metaTitle": "Baufinanzierung aus über 570 Banken | Banken4U Weinböhla",
+  "metaDescription": "Baufinanzierung aus über 570 Banken: Ilonka Karras, Bankfachwirtin mit über 30 Jahren Erfahrung, berät Sie persönlich. Weinböhla, Meißen und bundesweit.",
+  "hero": {
+    "kicker": "Banken4U · Finanzmaklerin in Weinböhla bei Meißen",
+    "zeile1": "Baufinanzierung",
+    "zeile2": "aus über",
+    "zeile2Betont": "570 Banken.",
+    "text": "Ilonka Karras, Bankfachwirtin mit über 30 Jahren Erfahrung. Persönlich im Büro, am Telefon oder online.",
+    "buttonRueckruf": "Rückruf vereinbaren",
+    "buttonAngebot": "Angebot anfordern"
+  },
+  "vorstellung": {
+    "kicker": "Ihre Finanzmaklerin in Weinböhla",
+    "titel": "Erst höre ich zu. Dann rechne ich.",
+    "text": "Mein Name ist Ilonka Karras. Über 30 Jahre arbeite ich jetzt im Bankbereich, heute als Finanzmaklerin mit eigenem Büro in Weinböhla. Bevor ich Ihnen einen Zinssatz nenne, möchte ich wissen, was Sie vorhaben, welche Rate sich für Sie gut anfühlt und was Ihnen Kopfzerbrechen macht. Erst dann frage ich bei den Banken an.",
+    "punkte": [
+      "Beratung im Büro, am Telefon oder online",
+      "Fachbegriffe erkläre ich, bis sie klar sind",
+      "Eine Ansprechpartnerin vom ersten Anruf bis zur Auszahlung"
+    ],
+    "bildunterschrift": "Bankfachwirtin (IHK) und Versicherungsfachfrau (IHK)",
+    "unterschriftZusatz": "Inhaberin von Banken4U"
+  },
+  "zahlen": {
+    "banken": "Banken und Bausparkassen im Vergleich",
+    "versicherer": "Versicherungsgesellschaften für Ihre Absicherung",
+    "jahre": "Jahre Erfahrung in Bank und Finanzierung",
+    "bewertung": "Sterne aus 80 geprüften Bewertungen"
+  },
+  "leistungen": {
+    "titel": "Finanzierung, Vorsorge und Absicherung aus einer Hand.",
+    "text": "Die meisten kommen wegen einer Baufinanzierung zu mir. Oft folgt später noch etwas anderes, das neue Auto, eine Rücklage fürs Haus oder die Frage nach der Krankenversicherung. Dann müssen Sie nicht wieder von vorn anfangen.",
+    "schwerpunktText": "Vom ersten Kassensturz vor dem Hauskauf bis zur Anschlussfinanzierung zehn Jahre später. Förderkredite der KfW und der Sächsischen Aufbaubank beziehe ich ein, wenn sie für Ihr Vorhaben infrage kommen.",
+    "hinweis": "Mit über 60, als Selbstständige oder mit wenig Eigenkapital lohnt sich die Anfrage trotzdem. Banken bewerten so etwas sehr unterschiedlich.",
+    "ratenkredit": "Feste Rate, feste Laufzeit. Für das nächste Auto, die neue Küche oder um einen teuren Dispo abzulösen.",
+    "bausparen": "Wer in ein paar Jahren umbauen möchte, kann sich den Darlehenszins schon heute sichern.",
+    "geldanlage": "Tagesgeld, Festgeld und Girokonto. Damit die Rücklage fürs Haus nicht auf dem Konto ohne Zinsen liegt.",
+    "versicherungen": "Private Krankenversicherung, Kfz-Versicherung und Krankenschutz für die Reise."
+  },
+  "ablauf": {
+    "titel": "So kommen Sie zu Ihrer Finanzierung.",
+    "text": "Sie haben eine feste Ansprechpartnerin und behalten den Überblick. Die Wege zur Bank übernehme ich.",
+    "bildtext": "Am Ende steht Ihre Unterschrift unter einer Finanzierung, die zu Ihnen passt.",
+    "schritte": [
+      {
+        "title": "Wir lernen uns kennen",
+        "text": "Am Telefon oder bei mir im Büro erzählen Sie, was Sie vorhaben. Ich frage so lange nach, bis ich Ihre Zahlen und Wünsche wirklich verstanden habe."
+      },
+      {
+        "title": "Ich hole Angebote ein",
+        "text": "Ich frage bei den Banken an, die für Ihren Fall infrage kommen, und rechne Förderkredite mit ein, wo es sie gibt."
+      },
+      {
+        "title": "Sie wählen aus",
+        "text": "Sie bekommen mehrere Varianten nebeneinander, mit Rate, Zinsbindung und Restschuld. Ich erkläre die Unterschiede, die Entscheidung liegt bei Ihnen."
+      },
+      {
+        "title": "Bis das Geld da ist",
+        "text": "Ich reiche Ihre Unterlagen ein, beantworte die Rückfragen der Bank und bleibe dran, bis das Darlehen ausgezahlt ist."
+      }
+    ]
+  },
+  "bewertungen": {
+    "titel": "Das sagen Kundinnen und Kunden.",
+    "text": "Fünf von 80 Bewertungen auf KennstDuEinen, alle mit 5 Sternen. Die vollständigen Bewertungen lesen Sie direkt auf den Portalen.",
+    "zusatz": "aus 80 geprüften Bewertungen bei KennstDuEinen"
+  },
+  "verguetung": {
+    "kicker": "Transparent erklärt",
+    "titel": "So werde ich",
+    "titelBetont": "bezahlt.",
+    "text": "Kommt über mich eine Finanzierung zustande, erhalte ich eine Provision von der Bank, mit der Sie abschließen. Ein gesondertes Beratungshonorar berechne ich Ihnen nicht.",
+    "punkte": [
+      {
+        "title": "Kein Beratungshonorar",
+        "text": "Für Gespräche, Vergleich und Begleitung bis zur Auszahlung stelle ich Ihnen keine Rechnung."
+      },
+      {
+        "title": "Keine Verpflichtung",
+        "text": "Ob und welches Angebot Sie annehmen, entscheiden Sie. Auch ein Nein nach dem Vergleich ist in Ordnung."
+      },
+      {
+        "title": "Offen gelegt",
+        "text": "Wie hoch meine Provision ist, erfahren Sie vor dem Abschluss und nicht erst danach."
+      }
+    ]
+  },
+  "rechner": {
+    "titel": "Was kostet Ihre Finanzierung im Monat?",
+    "text": "Spielen Sie mit Darlehensbetrag, Zins und Tilgung und sehen Sie sofort, wie sich Ihre Rate verändert. Weitere Rechner finden Sie auf der Rechnerseite."
+  },
+  "kontakt": {
+    "kicker": "Büro in Weinböhla",
+    "titel": "Kommen Sie vorbei oder rufen Sie an.",
+    "text": "Mein Büro liegt in der Nordstraße, gut erreichbar aus Meißen, Radebeul und Dresden. Wer weiter weg wohnt, bespricht alles mit mir am Telefon. So betreue ich bis heute viele Kunden in Berlin und Brandenburg aus meiner Zeit in Stahnsdorf."
+  }
+}

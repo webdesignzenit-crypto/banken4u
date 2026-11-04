@@ -1,0 +1,35 @@
+{
+  "name": "Banken4U",
+  "owner": "Ilonka Karras",
+  "role": "Finanzmaklerin",
+  "url": "https://banken4u.de",
+  "phone": "035243 477706",
+  "mobile": "0151 22555557",
+  "email": "info@banken4u.de",
+  "emailPersonal": "ilonka.karras@banken4u.de",
+  "emailPkv": "pkv@banken4u.de",
+  "street": "Nordstraße 7",
+  "zip": "01689",
+  "city": "Weinböhla",
+  "region": "Landkreis Meißen",
+  "hours": [
+    {
+      "days": "Montag bis Donnerstag",
+      "time": "10:00 bis 17:00 Uhr"
+    },
+    {
+      "days": "Freitag",
+      "time": "10:00 bis 15:00 Uhr"
+    }
+  ],
+  "hoursNote": "Termine auch außerhalb dieser Zeiten nach Vereinbarung",
+  "banks": "570",
+  "insurers": "65",
+  "years": "30",
+  "rating": "5,0",
+  "ratingCount": "80",
+  "reviewLinks": {
+    "kennstDuEinen": "https://www.kennstdueinen.de/baufinanzierung-weinboehla-banken-u-ilonka-karras-d100037.html",
+    "immoscout": "https://www.immobilienscout24.de/"
+  }
+}

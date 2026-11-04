@@ -1,0 +1,96 @@
+{
+  "slug": "baufinanzierung/neubau",
+  "group": "baufinanzierung",
+  "navTitle": "Neubau",
+  "navText": "Geld in Raten, entlang des Baufortschritts",
+  "metaTitle": "Neubau finanzieren mit Bauträger oder Fertighaus | Banken4U",
+  "metaDescription": "Neubau mit Bauträger, Fertighaus oder Architekt finanzieren. Zahlungsplan, Bereitstellungszinsen und Puffer im Blick, mehr als 570 Banken im Vergleich.",
+  "kicker": "Bauträger, Fertighaus oder Architektenhaus",
+  "title": "Neubaufinanzierung für Ihr eigenes Haus",
+  "lead": "Beim Neubau bekommen Sie Ihr Darlehen in Teilbeträgen, entlang der Rechnungen vom Bau. Bauvertrag, Bauzeit und Darlehen müssen deshalb im gleichen Takt laufen.",
+  "intro": [
+    "Wer baut, zahlt eine Weile doppelt. Die Miete für die jetzige Wohnung läuft weiter, und für jeden Teil des Darlehens, den die Bank schon ausgezahlt hat, fallen Zinsen an. Je länger der Bau dauert, desto länger trägt man beides.",
+    "Dazu kommt ein Posten, den viele erst im Kleingedruckten entdecken. Für bewilligtes Geld, das noch ungenutzt bei der Bank liegt, verlangt sie nach einer vereinbarten Frist Bereitstellungszinsen. Bei den mehr als 570 Kreditinstituten, mit denen ich arbeite, reicht diese Frist von wenigen Wochen bis zu vielen Monaten. Bei einem Neubau kann das mehr ausmachen als ein kleiner Unterschied beim Zins."
+  ],
+  "introTitle": "Ausgezahlt wird, was gebaut ist.",
+  "highlights": [
+    {
+      "title": "Der Zahlungsplan als Grundlage",
+      "text": "Die Raten aus Ihrem Bau- oder Bauträgervertrag bestimmen, wann die Bank welchen Teilbetrag auszahlt."
+    },
+    {
+      "title": "Zeit bis zum letzten Abruf",
+      "text": "Verzögert sich der Bau, sollen nicht gleich Bereitstellungszinsen anfallen. Darauf achte ich bei der Auswahl der Bank."
+    },
+    {
+      "title": "Puffer für das, was fehlt",
+      "text": "Hausanschlüsse, Außenanlagen und Küche stehen selten im Bauvertrag. In die Finanzierung gehören sie trotzdem."
+    },
+    {
+      "title": "Eigenleistung mit Augenmaß",
+      "text": "Was Sie selbst machen wollen, setzen wir vorsichtig an, damit am Ende kein Loch in der Baukasse bleibt."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Bauträger oder eigenes Grundstück?",
+      "paragraphs": [
+        "Beim Bauträger kaufen Sie Grundstück und Haus in einem notariellen Vertrag. Bezahlt wird in Raten nach Baufortschritt, und wie hoch jede Rate höchstens sein darf, regelt die Makler- und Bauträgerverordnung (MaBV). Die erste Rate darf der Bauträger unter anderem erst verlangen, wenn für Sie eine Auflassungsvormerkung im Grundbuch steht. Die Bank zahlt jede Rate aus, sobald der Bautenstand bestätigt ist.",
+        "Bauen Sie auf eigenem Grundstück, kommt das Grundstück zuerst. Es wird beim Notar gekauft und bezahlt, oft Monate bevor die Bagger anrollen. Danach folgt der Vertrag mit der Fertighausfirma, dem Generalunternehmer oder dem Architekten. Viele Fertighaushersteller wollen vor Produktionsbeginn eine Finanzierungsbestätigung sehen. Bauen Sie mit Architekt und einzelnen Handwerkern, bezahlen Sie viele Rechnungen einzeln, und die Kostenplanung muss besonders genau sein.",
+        "Welche Förderdarlehen von KfW und Land es für Neubauten gibt und wann sie beantragt sein müssen, lesen Sie auf meiner Seite zu Förderkrediten."
+      ]
+    },
+    {
+      "heading": "Bereitstellungszinsen",
+      "paragraphs": [
+        "Nach Abschluss des Darlehensvertrags hält die Bank das Geld für Sie bereit. Eine bestimmte Zeit ist bereitstellungszinsfrei, danach berechnet sie Zinsen auf den Teil, den Sie noch nicht abgerufen haben.",
+        "Bauzeiten verlängern sich gern, weil die Baugenehmigung auf sich warten lässt oder Handwerker fehlen. Ich suche deshalb Angebote, deren freie Zeit einen realistischen Bauzeitplan samt Reserve abdeckt. Viele Banken verlangen außerdem, dass Ihr Eigenkapital zuerst verbaut wird, bevor sie den ersten Teilbetrag auszahlen.",
+        "Für die Bauphase bieten manche Banken an, dass Sie zunächst nur Zinsen auf das abgerufene Geld zahlen und mit der Tilgung erst nach dem Einzug beginnen. Solange noch Miete fällig ist, nimmt das Druck aus dem Monatsbudget."
+      ]
+    },
+    {
+      "heading": "Was im Bauvertrag oft fehlt",
+      "paragraphs": [
+        "Das Angebot der Baufirma beschreibt das Haus. Was rundherum dazugehört, steht häufig nicht darin. Fällt es erst später auf, muss mitten im Bau nachfinanziert werden, und das ist meist teurer. Diese Posten gehören deshalb von Anfang an in die Rechnung."
+      ],
+      "bullets": [
+        "Hausanschlüsse für Strom, Wasser, Abwasser und Telekommunikation, je nach Versorger unterschiedlich teuer",
+        "Vermessung, Bodengutachten, Baugenehmigung und Baustrom",
+        "Erdaushub und Abtransport, wenn der Boden nicht mitspielt",
+        "Außenanlagen wie Zufahrt, Terrasse, Zaun und Carport",
+        "Küche, Bodenbeläge und Malerarbeiten beim Ausbauhaus",
+        "Bauherrenhaftpflicht und Bauleistungsversicherung"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Zählt ein Grundstück, das mir schon gehört, als Eigenkapital?",
+      "a": "In der Regel ja. Ein bezahltes Grundstück erkennen Banken als Eigenkapital an, auch wenn Sie es geerbt oder geschenkt bekommen haben. Maßgeblich ist dann der Wert aus Sicht der Bank, nicht unbedingt der damalige Kaufpreis."
+    },
+    {
+      "q": "Finanziere ich Grundstück und Haus in einem Darlehen?",
+      "a": "Meist ja, wenn der Bau bald nach dem Grundstückskauf beginnt. Fehlt noch der Bebauungsplan oder die Baugenehmigung, kann eine getrennte Finanzierung günstiger sein. Sonst laufen für das noch nicht abgerufene Baugeld womöglich monatelang Bereitstellungszinsen."
+    },
+    {
+      "q": "Brauche ich vor dem Bauträgervertrag schon die Darlehenszusage?",
+      "a": "Ja, das sollten Sie. Der Bauträgervertrag wird notariell beurkundet und verpflichtet Sie zur Zahlung aller Raten. Den Entwurf bekommen Sie als Verbraucher in der Regel zwei Wochen vor dem Termin, und diese Zeit nutzen wir für die Prüfung durch die Bank."
+    },
+    {
+      "q": "Was ist, wenn der Bau teurer wird als geplant?",
+      "a": "Dann greift zuerst der eingeplante Puffer. Reicht er nicht, braucht es eine Nachfinanzierung, oft bei derselben Bank, weil dort die Grundschuld schon eingetragen ist. Die Bank prüft das wie einen neuen Antrag, und günstiger wird es dadurch in der Regel nicht."
+    },
+    {
+      "q": "Wie viel Eigenleistung erkennt die Bank an?",
+      "a": "Nur einen begrenzten Teil, und jede Bank zieht die Grenze woanders. Anerkannt wird, was Sie glaubhaft selbst leisten können, etwa Malerarbeiten, Bodenbeläge oder Hilfe beim Innenausbau. Rechnen Sie ehrlich mit Ihrem Feierabend. Was Sie nicht schaffen, muss später doch ein Handwerker machen."
+    }
+  ],
+  "faqNote": "Beim Bauen kommen die Fragen meist mit dem ersten Vertragsentwurf. Bringen Sie ihn mit, wir gehen ihn zusammen durch.",
+  "ctaTitle": "Vom Zahlungsplan zur Finanzierung",
+  "ctaText": "Liegt Ihnen schon ein Angebot vom Bauträger oder der Baufirma vor, ist der Zahlungsplan darin ein guter Anfang. Ohne Vertrag beginnen wir mit Ihrem Budget und dem Eigenkapital.",
+  "related": [
+    "baufinanzierung/foerderkredite",
+    "baufinanzierung/immobilienkauf",
+    "bausparen"
+  ]
+}

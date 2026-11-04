@@ -1,0 +1,41 @@
+{
+  "kontakt": {
+    "metaTitle": "Kontakt: Banken4U in Weinböhla | Banken4U",
+    "metaDescription": "Kontakt zu Ilonka Karras, Banken4U: Nordstraße 7, 01689 Weinböhla. Telefon 035243 477706. Beratung persönlich vor Ort, telefonisch und online bundesweit.",
+    "title": "Kontakt und Anfahrt",
+    "lead": "Rufen Sie an, schreiben Sie mir oder kommen Sie nach Absprache in Weinböhla vorbei."
+  },
+  "angebot": {
+    "metaTitle": "Angebot anfordern | Banken4U",
+    "metaDescription": "Fordern Sie Ihr unverbindliches Finanzierungsangebot an. Ilonka Karras vergleicht über 570 Banken und meldet sich persönlich bei Ihnen.",
+    "title": "Angebot anfordern",
+    "lead": "Vier kurze Schritte, dann liegt Ihre Anfrage bei mir. Ich sehe sie mir persönlich an und rufe Sie zurück, sobald ich die ersten Fragen geklärt habe."
+  },
+  "rechner": {
+    "metaTitle": "Baufinanzierungsrechner und Kreditrechner | Banken4U",
+    "metaDescription": "Berechnen Sie Monatsrate und Restschuld Ihrer Baufinanzierung oder die Rate eines Ratenkredits. Unverbindliche Beispielrechnung, danach persönlich vergleichen lassen.",
+    "title": "Rechner für Ihre Finanzierung",
+    "lead": "Rechnen Sie selbst durch, was eine Finanzierung im Monat kostet. Die Zahlen sind ein Anhaltspunkt. Welchen Zins Sie tatsächlich bekommen, hängt von Ihren Unterlagen und von der Bank ab.",
+    "kicker": "Unverbindliche Beispielrechnungen"
+  },
+  "bewertungen": {
+    "metaTitle": "Bewertungen: 5,0 aus 80 Bewertungen | Banken4U",
+    "metaDescription": "5,0 von 5 Sternen aus 80 geprüften Bewertungen bei KennstDuEinen. Lesen Sie, was Kundinnen und Kunden an der Beratung von Ilonka Karras besonders schätzen.",
+    "title": "Bewertungen",
+    "lead": "Die vollständigen Bewertungen stehen auf KennstDuEinen und ImmobilienScout24. Hier lesen Sie, was darin immer wieder vorkommt.",
+    "stimmenText": "Fünf Stimmen von KennstDuEinen, gekürzt auf den ersten Satz."
+  },
+  "ratgeber": {
+    "metaTitle": "Ratgeber Baufinanzierung: verständlich erklärt | Banken4U",
+    "metaDescription": "Ratgeber rund um die Baufinanzierung: SCHUFA-Auskunft, die richtigen Unterlagen und wie viel Haus Sie sich leisten können. Verständlich erklärt von Ilonka Karras.",
+    "title": "Ratgeber rund um Ihre Finanzierung",
+    "lead": "Kurze, verständliche Antworten auf die Fragen, die mir in der Beratung am häufigsten gestellt werden.",
+    "kicker": "Wissen für Ihre Entscheidung"
+  },
+  "danke": {
+    "metaTitle": "Vielen Dank für Ihre Anfrage | Banken4U",
+    "metaDescription": "Ihre Anfrage ist bei mir angekommen. Ich sehe mir Ihre Angaben persönlich an und melde mich bei Ihnen.",
+    "title": "Vielen Dank, Ihre Anfrage ist angekommen.",
+    "lead": "Ich sehe mir Ihre Angaben persönlich an und melde mich so bald wie möglich bei Ihnen, meistens telefonisch."
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "slug": "datenschutz",
+  "title": "Datenschutzerklärung",
+  "metaTitle": "Datenschutzerklärung | Banken4U",
+  "metaDescription": "Datenschutz bei Banken4U: keine Cookies, kein Tracking. Hier lesen Sie, welche Daten bei Hosting, Kontaktformular und Karte verarbeitet werden.",
+  "blocks": [
+    {
+      "heading": "Überblick",
+      "paragraphs": [
+        "Diese Datenschutzerklärung erklärt, welche personenbezogenen Daten beim Besuch dieser Website verarbeitet werden, zu welchem Zweck und auf welcher Rechtsgrundlage.",
+        "Kurz zusammengefasst: Diese Website setzt keine Cookies und keine Analyse- oder Trackingdienste ein. Personenbezogene Daten werden vor allem verarbeitet, wenn Sie die Website aufrufen und wenn Sie mir eine Anfrage senden."
+      ]
+    },
+    {
+      "heading": "Verantwortliche",
+      "paragraphs": [
+        "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
+        "Ilonka Karras, Banken4U, Nordstraße 7, 01689 Weinböhla",
+        "Telefon: 035243 477706, Mobil: 0151 22555557, E-Mail: info@banken4u.de",
+        "Fragen zum Datenschutz richten Sie bitte direkt an mich: ilonka.karras@banken4u.de"
+      ]
+    },
+    {
+      "heading": "Zweck der Datenerhebung und Kooperationspartner",
+      "paragraphs": [
+        "Als Finanzmaklerin erhebe ich Ihre Angaben und Daten ausschließlich, um für Sie Angebote zu erstellen, Sie zu beraten und Verträge zu vermitteln. Für einen Finanzierungsvergleich benötige ich je nach Vorhaben zum Beispiel Name, Anschrift, Geburtsdatum, Familienstand, Anzahl der Kinder, Angaben zu Beschäftigung, Einkünften und Ausgaben sowie Ihre Kontaktdaten.",
+        "Um Angebote einzuholen und Verträge zu vermitteln, arbeite ich mit Kooperationspartnern zusammen. Ihre Daten gebe ich nur nach Abstimmung mit Ihnen und nur so weit an diese Partner weiter, wie es für Ihr Anliegen erforderlich ist. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO."
+      ],
+      "bullets": [
+        "Immobiliendarlehen: Starpool Finanz / EUROPACE, Lübeck; Prohyp, Berlin",
+        "Ratenkredite: zusätzlich Procheck24, München; Check24, Berlin; Smava, Berlin",
+        "Versicherungen: FondsFinanz Maklerservice, München; Starpool Finanz / EUROPACE; Procheck24; Check24"
+      ]
+    },
+    {
+      "heading": "Vertretung und Datensicherung",
+      "paragraphs": [
+        "Damit Sie auch während meines Urlaubs oder bei Krankheit eine Ansprechpartnerin haben, arbeite ich mit folgenden Finanzmaklerinnen und Finanzmaklern zusammen. Sie erhalten im Vertretungsfall Zugriff auf die für Ihr Anliegen nötigen Daten: Anna-Kathleen Fischer, Schönwalde-Glien; Patricia Schröder, Berlin; FinanzVitamin GmbH & Co. KG, Stahnsdorf.",
+        "Zur Datensicherung speichere ich Unterlagen bei Dropbox International Unlimited Company, Dublin, Irland. Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den hier genannten Zwecken findet nicht statt."
+      ]
+    },
+    {
+      "heading": "Hosting bei Netlify",
+      "paragraphs": [
+        "Diese Website wird bei Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, USA, gehostet. Netlify verarbeitet die beim Aufruf der Website anfallenden Daten als Auftragsverarbeiter in meinem Auftrag (Art. 28 DSGVO).",
+        "Dabei können Daten in die USA übermittelt werden. Netlify ist nach dem EU-U.S. Data Privacy Framework zertifiziert. Für diese Übermittlungen gilt damit der Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Zusätzlich stützt Netlify Übermittlungen auf die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).",
+        "Rechtsgrundlage für das Hosting ist mein berechtigtes Interesse an einer sicheren, schnellen und zuverlässigen Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO)."
+      ]
+    },
+    {
+      "heading": "Server-Logfiles",
+      "paragraphs": [
+        "Bei jedem Aufruf der Website übermittelt Ihr Browser automatisch Informationen an den Server. Diese werden in sogenannten Server-Logfiles gespeichert:"
+      ],
+      "bullets": [
+        "IP-Adresse",
+        "Datum und Uhrzeit des Zugriffs",
+        "aufgerufene Seite oder Datei",
+        "Website, von der aus Sie auf diese Seite gekommen sind (Referrer)",
+        "Browsertyp und -version sowie Betriebssystem"
+      ]
+    },
+    {
+      "heading": "Zweck und Dauer der Logfile-Speicherung",
+      "paragraphs": [
+        "Die Logfiles sind technisch notwendig, um die Website auszuliefern und ihre Sicherheit und Stabilität zu gewährleisten, etwa zur Erkennung von Angriffen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.",
+        "Die Daten werden nicht mit anderen Daten zusammengeführt und nicht für Profile oder Werbung genutzt. Sie werden nur so lange gespeichert, wie es für diese Zwecke erforderlich ist, und danach gelöscht."
+      ]
+    },
+    {
+      "heading": "Keine Cookies, kein Tracking",
+      "paragraphs": [
+        "Diese Website setzt keine Cookies. Es gibt keine Analyse- oder Trackingdienste, keine Werbenetzwerke und keine eingebundenen Social-Media-Funktionen.",
+        "Es werden auch keine Informationen auf Ihrem Endgerät gespeichert oder von dort ausgelesen, die für die Bereitstellung der Website nicht unbedingt erforderlich sind."
+      ]
+    },
+    {
+      "heading": "Schriftarten",
+      "paragraphs": [
+        "Die Schriftarten dieser Website sind lokal eingebunden und werden vom eigenen Webserver geladen. Beim Aufruf der Website wird keine Verbindung zu Servern von Google oder anderen Schriftanbietern hergestellt."
+      ]
+    },
+    {
+      "heading": "Kontakt- und Angebotsformular",
+      "paragraphs": [
+        "Für Anfragen können Sie das Kontaktformular oder das Angebotsformular nutzen. Die Formulare werden über den Dienst Netlify Forms von Netlify, Inc. verarbeitet. Ihre Angaben werden bei Netlify gespeichert und mir zur Bearbeitung übermittelt. Für die Übermittlung in die USA gelten die Angaben zum Hosting.",
+        "Verarbeitet werden die Angaben, die Sie in das Formular eintragen. Das sind insbesondere Name, E-Mail-Adresse, Telefonnummer und Ihre Nachricht, im Angebotsformular außerdem Angaben zu Ihrem Vorhaben, etwa zur Art der Finanzierung, zum Kaufpreis oder zum Eigenkapital. Pflichtfelder sind gekennzeichnet. Ohne diese Angaben kann ich Ihre Anfrage nicht bearbeiten. Zusätzlich werden der Zeitpunkt der Übermittlung und Ihre IP-Adresse gespeichert.",
+        "Ich nutze Ihre Angaben ausschließlich, um Ihre Anfrage zu bearbeiten und Ihnen zu antworten. Ist Ihre Anfrage auf eine Beratung, eine Vermittlung oder einen Vertrag gerichtet, ist Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO. In allen anderen Fällen ist Rechtsgrundlage mein berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Zum Schutz vor Spam prüft Netlify eingehende Formulardaten automatisch und nutzt dafür auch den Dienst Akismet der Automattic Inc., USA. Rechtsgrundlage ist mein berechtigtes Interesse, missbräuchliche Einsendungen abzuwehren (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Ihre Angaben speichere ich, solange es für die Bearbeitung Ihrer Anfrage erforderlich ist. Kommt keine Zusammenarbeit zustande, lösche ich sie, sobald Ihre Anfrage abschließend erledigt ist. Kommt es zu einer Beratung oder Vermittlung, bewahre ich die Daten auf, solange gesetzliche Aufbewahrungspflichten bestehen, zum Beispiel nach Handels- und Steuerrecht."
+      ]
+    },
+    {
+      "heading": "Kontakt per E-Mail oder Telefon",
+      "paragraphs": [
+        "Wenn Sie mir eine E-Mail schreiben oder mich anrufen, verarbeite ich Ihre Angaben, zum Beispiel Name, Kontaktdaten und Ihr Anliegen, um Ihre Anfrage zu bearbeiten. Rechtsgrundlage und Speicherdauer richten sich nach den Angaben zum Kontaktformular."
+      ]
+    },
+    {
+      "heading": "Karte auf der Kontaktseite (OpenStreetMap)",
+      "paragraphs": [
+        "Auf der Kontaktseite können Sie eine Karte mit meinem Standort anzeigen lassen. Die Karte stammt von OpenStreetMap, einem Angebot der OpenStreetMap Foundation, St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich.",
+        "Die Karte wird erst geladen, wenn Sie das mit einem Klick bestätigen. Vorher wird keine Verbindung zu OpenStreetMap hergestellt. Nach Ihrem Klick lädt Ihr Browser die Kartendaten von Servern der OpenStreetMap Foundation, die dafür auch technische Dienstleister einsetzen kann. Dabei werden Ihre IP-Adresse und technische Angaben wie Browsertyp und der angezeigte Kartenausschnitt übermittelt.",
+        "Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie gilt nur für den jeweiligen Seitenaufruf und wird nicht gespeichert. Für das Vereinigte Königreich hat die EU-Kommission ein angemessenes Datenschutzniveau festgestellt (Art. 45 DSGVO).",
+        "Weitere Informationen finden Sie in der Datenschutzerklärung der OpenStreetMap Foundation: osmfoundation.org/wiki/Privacy_Policy"
+      ]
+    },
+    {
+      "heading": "Links zu Bewertungsportalen",
+      "paragraphs": [
+        "Auf dieser Website finden Sie Links zu Bewertungen auf KennstDuEinen und ImmobilienScout24. Diese Angebote sind nur verlinkt und nicht in die Website eingebunden. Daten werden erst übertragen, wenn Sie einen Link anklicken. Ab dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters."
+      ]
+    },
+    {
+      "heading": "SSL- bzw. TLS-Verschlüsselung",
+      "paragraphs": [
+        "Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers. Daten, die Sie über die Formulare senden, können so nicht von Dritten mitgelesen werden."
+      ]
+    },
+    {
+      "heading": "Ihre Rechte",
+      "paragraphs": [
+        "Sie haben gegenüber mir folgende Rechte hinsichtlich Ihrer personenbezogenen Daten. Für eine Anfrage genügt eine formlose Nachricht an die oben genannten Kontaktdaten."
+      ],
+      "bullets": [
+        "Auskunft über die gespeicherten Daten (Art. 15 DSGVO)",
+        "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+        "Löschung Ihrer Daten (Art. 17 DSGVO)",
+        "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+        "Datenübertragbarkeit (Art. 20 DSGVO)",
+        "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+        "Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)"
+      ]
+    },
+    {
+      "heading": "Widerspruchsrecht",
+      "paragraphs": [
+        "Beruht eine Verarbeitung auf meinem berechtigten Interesse (Art. 6 Abs. 1 lit. f DSGVO), können Sie ihr jederzeit aus Gründen widersprechen, die sich aus Ihrer besonderen Situation ergeben. Ich verarbeite Ihre Daten dann nicht mehr, es sei denn, es liegen zwingende schutzwürdige Gründe für die Verarbeitung vor oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen."
+      ]
+    },
+    {
+      "heading": "Beschwerderecht bei der Aufsichtsbehörde",
+      "paragraphs": [
+        "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Für Banken4U zuständig ist:",
+        "Die Sächsische Datenschutz- und Transparenzbeauftragte, Devrientstraße 5, 01067 Dresden, www.datenschutz.sachsen.de"
+      ]
+    },
+    {
+      "heading": "Stand",
+      "paragraphs": [
+        "Stand dieser Datenschutzerklärung: Oktober 2026"
+      ]
+    }
+  ]
+}

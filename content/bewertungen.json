@@ -1,0 +1,34 @@
+{
+  "reviews": [
+    {
+      "name": "Zlatko V.",
+      "date": "Januar 2022",
+      "title": "Etwas Besseres hätte uns nicht passieren können!",
+      "text": "Frau Karras hat das schier Unmögliche möglich gemacht!"
+    },
+    {
+      "name": "Marijke C.",
+      "date": "Januar 2019",
+      "title": "Professionelle Expertise mit Herz",
+      "text": "Frau Karras hat eine wundervoll ruhige Art, die einem den Stress einer Immobilienfinanzierung wesentlich erleichtert."
+    },
+    {
+      "name": "Philipp G.",
+      "date": "Februar 2022",
+      "title": "Sehr kompetent",
+      "text": "Sehr kompetent, auf alle Fragen top drauf eingegangen und auch alle Risiken erläutert."
+    },
+    {
+      "name": "Aline V.",
+      "date": "Februar 2023",
+      "title": "Die ultimative Finanzberaterin! Äußerst empfehlenswert!",
+      "text": "Frau Karras ist äußerst empfehlenswert für das große Thema Baufinanzierung …"
+    },
+    {
+      "name": "I. H.",
+      "date": "Juli 2019",
+      "title": "Sehr netter, kompetenter Kontakt",
+      "text": "Frau Karras hat mich sehr gut beraten und ein tolles Finanzierungsangebot für mich erarbeitet."
+    }
+  ]
+}

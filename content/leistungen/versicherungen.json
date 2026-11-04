@@ -1,0 +1,102 @@
+{
+  "slug": "versicherungen",
+  "group": "weitere",
+  "navTitle": "Versicherungen",
+  "navText": "PKV, Kfz und Auslandskrankenversicherung",
+  "metaTitle": "PKV, Kfz und Reiseschutz vergleichen | Banken4U",
+  "metaDescription": "Private Krankenversicherung, Kfz- und Auslandskrankenversicherung. Tarife von rund 65 Gesellschaften, erklärt von einer Versicherungsfachfrau (IHK).",
+  "kicker": "Krankenversicherung, Kfz und Reiseschutz",
+  "title": "Versicherungen in Ruhe vergleichen",
+  "lead": "Manche Verträge behalten Sie Jahrzehnte, andere stehen jeden Herbst neu zur Wahl. Als Versicherungsfachfrau (IHK) vergleiche ich dafür Tarife von rund 65 Versicherungsgesellschaften.",
+  "intro": [
+    "Zwei PKV-Tarife mit ähnlichem Beitrag können sehr unterschiedlich leisten, etwa beim Zahnersatz oder bei der Frage, ob Sie ohne Überweisung direkt zum Facharzt gehen dürfen. Solche Unterschiede bemerkt man erst, wenn man krank ist. Deshalb lese ich zuerst die Bedingungen und rede danach über den Preis.",
+    "Natürlich kann eine Online-Berechnung nicht das Beratungsgespräch ersetzen. Bei der privaten Krankenversicherung, die Sie oft bis ins hohe Alter behalten, nehme ich mir besonders viel Zeit. Bei Kfz- und Reiseversicherung geht es schneller, da genügt oft ein Telefonat."
+  ],
+  "introTitle": "Gleicher Preis heißt nicht gleiche Leistung.",
+  "highlights": [
+    {
+      "title": "Beitrag im Alter mitgedacht",
+      "text": "Zur PKV gehört für mich auch die Frage, wie sich Ihr Beitrag im Ruhestand entwickeln kann und wie Sie dafür vorsorgen."
+    },
+    {
+      "title": "Gesundheitsfragen gemeinsam",
+      "text": "Wir gehen die Fragen im Antrag zusammen durch. Eine vergessene Angabe kann später den Versicherungsschutz kosten."
+    },
+    {
+      "title": "Wechselfrist 30. November",
+      "text": "Für die meisten Kfz-Verträge ist das der Stichtag, um zum 1. Januar zu einer anderen Gesellschaft zu wechseln."
+    },
+    {
+      "title": "Reiseschutz direkt online",
+      "text": "Die Auslandskrankenversicherung für den Urlaub schließen Sie bei meinem Partner Care Concept im Internet ab."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Private Krankenversicherung",
+      "paragraphs": [
+        "Nicht jeder kann wählen. Angestellte brauchen ein regelmäßiges Jahreseinkommen über der Versicherungspflichtgrenze, die jedes Jahr neu festgelegt wird. Für Selbstständige und Freiberufler spielt die Höhe des Einkommens keine Rolle. Beamte versichern privat nur den Teil ihrer Krankheitskosten, den die Beihilfe des Dienstherrn nicht übernimmt.",
+        "Der Beitrag richtet sich nach Eintrittsalter, Gesundheitszustand und den gewählten Leistungen, nicht nach dem Gehalt. Dass er im Lauf der Jahre steigt, gehört zur ehrlichen Rechnung dazu, denn auch die Kosten im Gesundheitswesen steigen. Die Alterungsrückstellungen, die der Versicherer aus Ihren Beiträgen bildet, dämpfen das, verhindern es aber nicht.",
+        "Für Familien sieht die Rechnung anders aus als für Singles. In der gesetzlichen Kasse sind Kinder und ein Ehepartner ohne eigenes Einkommen oft beitragsfrei mitversichert, in der PKV braucht jeder einen eigenen Vertrag. Verdient der privat versicherte Elternteil mehr als der gesetzlich versicherte Ehepartner und zugleich mehr als die Versicherungspflichtgrenze, entfällt für die Kinder die Familienversicherung.",
+        "Haben Sie Vorerkrankungen, frage ich vor dem eigentlichen Antrag anonym bei mehreren Gesellschaften an. So erfahren Sie vorher, wer Sie zu welchen Bedingungen versichern würde. Eine Ablehnung müssten Sie dagegen bei vielen späteren Anträgen angeben."
+      ]
+    },
+    {
+      "heading": "Kfz-Versicherung und der 30. November",
+      "paragraphs": [
+        "Die Kfz-Haftpflicht ist für jedes zugelassene Fahrzeug vorgeschrieben und zahlt Schäden, die Sie anderen zufügen. Die Teilkasko schützt Ihr eigenes Auto zum Beispiel bei Diebstahl, Glasbruch, Hagel oder einem Wildunfall. Die Vollkasko zahlt zusätzlich nach einem selbst verursachten Unfall und bei Vandalismus. Für ein geleastes oder finanziertes Neufahrzeug verlangt der Geldgeber meist eine Vollkasko.",
+        "Den Beitrag bestimmen vor allem Ihre Schadenfreiheitsklasse, die Typ- und Regionalklasse des Autos, die jährliche Fahrleistung und wer außer Ihnen damit fährt. Nach einem kleinen Schaden kann es günstiger sein, ihn selbst zu bezahlen, statt in der Schadenfreiheitsklasse zurückgestuft zu werden. Viele Versicherer räumen Ihnen dafür nach der Regulierung eine Frist ein.",
+        "Bei den meisten Verträgen endet das Versicherungsjahr am 31. Dezember, und die Kündigung muss bis zum 30. November beim Versicherer sein. Kommt im Herbst die neue Beitragsrechnung, ist das der richtige Moment für einen Vergleich."
+      ]
+    },
+    {
+      "heading": "Was zahlt die Krankenkasse im Urlaub?",
+      "paragraphs": [
+        "Weniger, als viele erwarten. Innerhalb der EU werden Sie mit der Europäischen Krankenversicherungskarte auf der Rückseite Ihrer Gesundheitskarte behandelt, abgerechnet wird aber nach den Regeln des Gastlandes. Zuzahlungen und Privatbehandlungen tragen Sie selbst. In vielen Ländern außerhalb Europas zahlt die gesetzliche Kasse gar nichts, und einen Rücktransport nach Deutschland übernimmt sie nicht.",
+        "Für Urlaubs- und Geschäftsreisen genügt meist ein Jahresvertrag, der jede Reise bis zu einer bestimmten Dauer abdeckt. Für ein Auslandssemester, Work and Travel oder einen längeren Aufenthalt reicht das nicht, dafür gibt es eigene Langzeittarife."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Kann ich später zurück in die gesetzliche Krankenversicherung?",
+      "a": "Nur unter engen Voraussetzungen. Sind Sie angestellt, werden Sie wieder versicherungspflichtig, wenn Ihr Einkommen unter die Versicherungspflichtgrenze fällt. Ab 55 ist der Weg zurück in aller Regel versperrt. Gehen Sie deshalb davon aus, dass die Entscheidung für die PKV eine Entscheidung auf Dauer ist."
+    },
+    {
+      "q": "Warum sind die Gesundheitsfragen so wichtig?",
+      "a": "Weil der Versicherer später die Leistung verweigern oder den Vertrag beenden kann, wenn eine Angabe fehlt oder nicht stimmt. Beantworten Sie die Fragen deshalb vollständig und wahrheitsgemäß. Fordern Sie vorher bei Ihrer Krankenkasse einen Auszug über die abgerechneten Behandlungen an, dann sehen Sie, ob Ihre Erinnerung lückenlos ist."
+    },
+    {
+      "q": "Wird die private Krankenversicherung im Alter teurer?",
+      "a": "Meist ja, auch wenn die Alterungsrückstellungen einen Teil abfedern. Mit einem Beitragsentlastungstarif zahlen Sie heute etwas mehr, damit Ihr Beitrag ab dem Rentenalter sinkt. Als Rentnerin oder Rentner bekommen Sie außerdem einen Zuschuss der gesetzlichen Rentenversicherung zu Ihrem Beitrag."
+    },
+    {
+      "q": "Kann ich die Kfz-Versicherung auch außerhalb des Stichtags wechseln?",
+      "a": "Ja, in einigen Fällen. Nach einer Beitragserhöhung und nach einem regulierten Schaden haben Sie ein Sonderkündigungsrecht, das Sie innerhalb eines Monats nutzen müssen. Kaufen Sie ein anderes Auto, können Sie es von Anfang an bei einer anderen Gesellschaft versichern."
+    },
+    {
+      "q": "Lohnt es sich, einen bestehenden PKV-Vertrag prüfen zu lassen?",
+      "a": "Oft ja. Ein Wechsel zu einem anderen Versicherer ist wegen der Alterungsrückstellungen allerdings häufig ungünstig. Ein Wechsel in einen anderen Tarif beim eigenen Versicherer kann sich dagegen lohnen, und dabei bleiben Ihre Rückstellungen erhalten."
+    },
+    {
+      "q": "Wie werden Sie für die Vermittlung bezahlt?",
+      "a": "Ich erhalte eine Provision von der Versicherungsgesellschaft, bei der Sie den Vertrag abschließen. Ein gesondertes Honorar berechne ich Ihnen nicht."
+    }
+  ],
+  "faqNote": "Bei der PKV sind Fragen vor dem Antrag mehr wert als danach. Fragen Sie lieber einmal zu viel.",
+  "ctaTitle": "Mit Ihrem Versicherungsschein fangen wir an",
+  "ctaText": "Für die Kfz-Versicherung schicken Sie ihn mir am liebsten bis Ende Oktober, dann bleibt vor dem Stichtag genug Zeit für einen Vergleich. Anfragen zur privaten Krankenversicherung erreichen mich auch direkt unter pkv@banken4u.de.",
+  "related": [
+    "geldanlage",
+    "baufinanzierung",
+    "ratenkredit"
+  ],
+  "linksText": "Für Urlaubs- und Geschäftsreisen schließen Sie den Krankenschutz hier direkt bei Care Concept ab. Planen Sie einen längeren Aufenthalt im Ausland, melden Sie sich vorher bei mir.",
+  "links": [
+    {
+      "label": "Auslandskrankenversicherung abschließen",
+      "href": "http://www.care-concept.de/index.php?vmnr=0021490162&blanko=ja&fs=db&mail=ilonka.karras%40banken4u.de",
+      "text": "Online-Antrag bei Care Concept, meinem Partner für den Krankenschutz auf Reisen"
+    }
+  ]
+}
