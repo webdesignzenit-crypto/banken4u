@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Statischer Export (out/): Netlifys Next.js-Laufzeit wird nicht gebraucht
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   # Bis zum Livegang: Seite für Suchmaschinen sperren. Beim Livegang diese Zeile löschen.
   NEXT_PUBLIC_NOINDEX = "1"
 
