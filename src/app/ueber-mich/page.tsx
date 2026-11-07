@@ -26,7 +26,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
-      <PageHero img="ueber" title={about.title} lead={about.lead} crumbs={[{ href: "/ueber-mich/", label: "Über mich" }]} kicker={about.kicker} />
+      <PageHero title={about.title} lead={about.lead} crumbs={[{ href: "/ueber-mich/", label: "Über mich" }]} kicker={about.kicker} />
       <main id="inhalt">
         <section className="sec">
           <div className="wrap intro">

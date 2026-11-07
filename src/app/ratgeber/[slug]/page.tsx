@@ -44,7 +44,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <PageHero
-        img={articleImage[a.slug]}
         title={a.title}
         lead={a.lead}
         crumbs={[

@@ -20,7 +20,6 @@ export default function Page() {
   return (
     <>
       <PageHero
-        img="ratgeber"
         title={t.title}
         lead={t.lead}
         crumbs={[{ href: "/ratgeber/", label: "Ratgeber" }]}

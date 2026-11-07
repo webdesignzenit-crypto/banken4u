@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export type Crumb = { href: string; label: string };
 
-/** Kopfbereich der Unterseiten: Vollbild-Foto, Brotkrumen, H1 unten links, Aktionen unten rechts. */
+/** Kopfbereich der Unterseiten: Vollbild-Foto (oder ohne Foto auf Logo-Blau), Brotkrumen, H1 unten links, Aktionen unten rechts. */
 export default function PageHero({
   img,
   title,
@@ -23,7 +23,7 @@ export default function PageHero({
   actions = true,
   children,
 }: {
-  img: string;
+  img?: string;
   title: string;
   lead?: string;
   crumbs: Crumb[];
@@ -40,7 +40,7 @@ export default function PageHero({
       const q = gsap.utils.selector(root.current);
       gsap.fromTo(q(".phero-w > span"), { yPercent: 112 }, { yPercent: 0, duration: 1, ease: "power4.out", stagger: 0.04, delay: 0.05 });
       gsap.fromTo(q("[data-in]"), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.08, delay: 0.35 });
-      gsap.to(pic.current, {
+      if (pic.current) gsap.to(pic.current, {
         yPercent: 10,
         ease: "none",
         scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: true },
@@ -52,8 +52,8 @@ export default function PageHero({
   const words = title.split(" ");
 
   return (
-    <section className="phero" ref={root}>
-      {img.startsWith("/") ? (
+    <section className={img ? "phero" : "phero is-plain"} ref={root}>
+      {!img ? null : img.startsWith("/") ? (
         // Hochgeladenes Bild aus dem Bearbeitungsbereich
         <img ref={pic} className="phero-img" src={img} alt="" fetchPriority="high" />
       ) : (

@@ -322,6 +322,8 @@ html.js .main-over { margin-top: -100vh; margin-top: -100svh; }
 .phero-line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .phero-line > span { display: inline-block; }
 .phero-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.phero.is-plain { min-height: 0; }
+.phero.is-plain .phero-in { padding-top: 150px; padding-bottom: clamp(36px, 5vw, 64px); }
 .band { position: relative; background: var(--tanne); color: #fff; padding-top: 150px; padding-bottom: clamp(36px, 5vw, 64px); }
 .band h1 { max-width: 20ch; }
 .band .t-lead { margin: 18px 0 0; max-width: 56ch; opacity: 0.9; }
