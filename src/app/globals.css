@@ -160,26 +160,15 @@ html.js .split[data-split].is-in .w > span { transform: none; }
 /* Mega-Menü */
 .mega { position: fixed; left: 0; right: 0; z-index: 59; background: var(--papier); color: var(--tinte); border-bottom: 1px solid var(--linie); box-shadow: 0 30px 60px -30px rgba(53, 95, 145, 0.35); clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path 0.55s var(--ease-io), visibility 0s linear 0.55s; }
 .mega.is-open { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path 0.6s var(--ease-io), visibility 0s; }
-.mega-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1.3fr); gap: clamp(20px, 2.4vw, 40px); padding-block: 36px 40px; }
+.mega-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: clamp(20px, 2.4vw, 40px); padding-block: 36px 40px; }
 .mega h3 { font-size: clamp(1.8rem, 2.4vw, 2.6rem); line-height: 1.05; }
 .mega p { color: var(--grau); margin: 12px 0 20px; max-width: 34ch; font-size: 0.95rem; }
-.mega-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--tinte); }
+.mega-links { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); column-gap: clamp(16px, 2vw, 32px); align-content: start; border-top: 1px solid var(--tinte); }
 .mega-links a { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--linie); transition: padding 0.45s var(--ease), color 0.3s; }
-.mega-links a:nth-child(odd) { margin-right: clamp(14px, 1.6vw, 28px); }
 .mega-links b { display: block; font-family: var(--font-serif); font-weight: 400; font-size: 1.35rem; line-height: 1.15; }
 .mega-links small { display: block; color: var(--grau); font-size: 0.86rem; margin-top: 2px; }
 .mega-links svg { width: 18px; height: 18px; color: var(--messing-tief); transition: transform 0.35s var(--ease); flex: none; }
 @media (hover: hover) { .mega-links a:hover { padding-left: 8px; color: var(--tanne); } .mega-links a:hover svg { transform: translateX(4px); } }
-/* Ansprechpartnerin im Mega-Menü: Foto links, Kontakt rechts auf Logo-Blau, ohne Verlauf über dem Bild */
-.mega-card { position: relative; overflow: hidden; min-height: 224px; padding-left: 36%; background: var(--tanne); color: #fff; display: flex; }
-.mega-card img { position: absolute; left: 0; top: 0; width: 36%; height: 100%; object-fit: cover; object-position: 50% 14%; background: #e9ebee; }
-.mega-card > div { display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 20px 18px 18px; min-width: 0; }
-.mega-card small { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.88); }
-.mega-card b { font-family: var(--font-serif); font-weight: 400; font-size: 1.45rem; line-height: 1.1; margin-bottom: 10px; }
-.mega-tel { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 1rem; white-space: nowrap; }
-.mega-tel svg { width: 16px; height: 16px; flex: none; }
-.mega-card .link-u { color: #fff; font-size: 0.9rem; margin-top: 8px; align-self: flex-start; white-space: nowrap; }
-@media (max-width: 1180px) { .mega-card { padding-left: 0; } .mega-card img { display: none; } }
 .mega-backdrop { position: fixed; inset: 0; z-index: 58; background: rgba(6, 20, 38, 0.35); opacity: 0; visibility: hidden; transition: opacity 0.4s var(--ease), visibility 0s linear 0.4s; }
 .mega-backdrop.is-open { opacity: 1; visibility: visible; transition: opacity 0.4s var(--ease); }
 
@@ -675,7 +664,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
   .related, .cards3 { grid-template-columns: 1fr 1fr; }
   .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mega-in { grid-template-columns: 1fr 2fr; }
-  .mega-card { display: none; }
+  .mega-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .free-points { grid-template-columns: 1fr; }
   .free-points > div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--linie-hell); margin-top: 22px; }
 }
