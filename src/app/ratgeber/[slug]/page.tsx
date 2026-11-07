@@ -133,13 +133,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </div>
             <div className="cards3">
               {others.map((o) => (
-                <Link className="acard" href={`/ratgeber/${o.slug}/`} key={o.slug}>
-                  <div className="acard-img">
-                    <img src={imgAny(articleImage[o.slug], true)} alt="" loading="lazy" />
-                  </div>
+                <Link className="acard acard-text" href={`/ratgeber/${o.slug}/`} key={o.slug}>
                   <div className="acard-body">
+                    <div className="acard-top">
+                      <span className="acard-nr">{String(articles.indexOf(o) + 1).padStart(2, "0")}</span>
+                      <span>{o.readingMinutes} Minuten Lesezeit</span>
+                    </div>
                     <h3>{o.title}</h3>
                     <p>{o.lead}</p>
+                    <span className="link-u">
+                      Artikel lesen
+                      <IconArrow />
+                    </span>
                   </div>
                 </Link>
               ))}

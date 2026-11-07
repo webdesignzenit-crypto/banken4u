@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 import { IconArrow } from "@/components/Icons";
 import { articles } from "@/content/ratgeber";
-import { articleImage } from "@/content/articleImages";
-import { imgAny } from "@/content/images";
 import { site } from "@/content/site";
 import seiten from "../../../content/seiten.json";
 
@@ -40,17 +38,17 @@ export default function Page() {
           <div className="wrap">
             <div className="cards3">
               {articles.map((a, i) => (
-                <Link className="acard" href={`/ratgeber/${a.slug}/`} key={a.slug} data-reveal style={{ ["--d" as string]: `${i * 80}ms` }}>
-                  <div className="acard-img">
-                    <img src={imgAny(articleImage[a.slug], true)} alt="" loading="lazy" />
-                  </div>
+                <Link className="acard acard-text" href={`/ratgeber/${a.slug}/`} key={a.slug} data-reveal style={{ ["--d" as string]: `${i * 80}ms` }}>
                   <div className="acard-body">
-                    <span className="t-small" style={{ color: "var(--grau)" }}>
-                      {a.readingMinutes} Minuten Lesezeit · {a.updated}
-                    </span>
+                    <div className="acard-top">
+                      <span className="acard-nr">{String(i + 1).padStart(2, "0")}</span>
+                      <span>
+                        {a.readingMinutes} Minuten Lesezeit · {a.updated}
+                      </span>
+                    </div>
                     <h2>{a.title}</h2>
                     <p>{a.lead}</p>
-                    <span className="link-u" style={{ justifySelf: "start", marginTop: 6 }}>
+                    <span className="link-u">
                       Artikel lesen
                       <IconArrow />
                     </span>

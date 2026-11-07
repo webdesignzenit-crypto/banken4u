@@ -28,13 +28,14 @@ export default function Home() {
           <div className="wrap">
             <div className="intro">
               <figure className="portrait has-photo" data-reveal>
+                {/* Bewusst das zweite Foto von Frau Karras: das große Porträt steht schon auf „Über mich“ */}
                 <img
-                  src={img("ilonka-karras.webp")}
-                  srcSet={`${img("ilonka-karras-sm.webp")} 525w, ${img("ilonka-karras.webp")} 1050w`}
+                  src={img("ilonka-karras-start.webp")}
+                  srcSet={`${img("ilonka-karras-start-sm.webp")} 463w, ${img("ilonka-karras-start.webp")} 900w`}
                   sizes="(max-width: 980px) 100vw, 34vw"
                   alt="Ilonka Karras, Inhaberin von Banken4U"
-                  width={1050}
-                  height={1120}
+                  width={900}
+                  height={900}
                   loading="lazy"
                 />
                 <figcaption>
