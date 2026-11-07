@@ -7,7 +7,7 @@ import { useLenis } from "lenis/react";
 import { Logo } from "./Logo";
 import { IconArrow, IconChevron, IconClose, IconMenu, IconPhone, IconPlus } from "./Icons";
 import { navBaufinanzierung, navLeistungen, navMain, site } from "@/content/site";
-import { imgSrc } from "@/content/images";
+import { img } from "@/content/images";
 
 type MegaKey = "bau" | "leist" | null;
 
@@ -210,9 +210,20 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          <div className="mega-img">
-            <img src={imgSrc(mega === "leist" ? "geldanlage" : "schluessel", true)} alt="" loading="lazy" />
-            <span>Persönlich für Sie da: {site.phone}</span>
+          <div className="mega-card">
+            <img src={img("ilonka-karras-sm.webp")} alt="" width={525} height={560} loading="lazy" />
+            <div>
+              <small>Persönlich für Sie da</small>
+              <b>{site.owner}</b>
+              <a className="mega-tel" href={site.phoneHref} tabIndex={mega ? 0 : -1}>
+                <IconPhone />
+                {site.phone}
+              </a>
+              <Link className="link-u" href="/kontakt/" tabIndex={mega ? 0 : -1}>
+                Termin vereinbaren
+                <IconArrow />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

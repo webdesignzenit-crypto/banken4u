@@ -49,9 +49,10 @@ export default function ServiceView({ slug }: { slug: string }) {
           { href: `/${s.slug}/`, label: s.navTitle },
         ]
       : [{ href: `/${s.slug}/`, label: s.navTitle }];
-  const related = s.related.map((r) => services.find((x) => x.slug === r)).filter(Boolean) as ServicePage[];
   const isHub = s.slug === "baufinanzierung";
   const children = isHub ? services.filter((x) => x.group === "baufinanzierung" && x.slug !== "baufinanzierung") : [];
+  // Auf der Übersicht stehen die Unterseiten schon als Kacheln, deshalb unten nur Themen, die noch nicht zu sehen waren
+  const related = (s.related.map((r) => services.find((x) => x.slug === r)).filter(Boolean) as ServicePage[]).filter((r) => !children.some((c) => c.slug === r.slug));
 
   const faqLd = {
     "@context": "https://schema.org",

@@ -21,10 +21,13 @@ export const images: Record<string, { alt: string; pos?: string }> = {
   ratgeber: { alt: "Notizbuch auf einem Holztisch neben einer Tastatur", pos: "50% 50%" },
   region: { alt: "Albrechtsburg Meißen hinter herbstlichen Weinbergen", pos: "50% 45%" },
   ueber: { alt: "Schreibtisch mit Lampe und Pflanzen im warmen Abendlicht", pos: "50% 50%" },
+  schufa: { alt: "Lesebrille auf ausgedruckten Unterlagen, ein Schreiben genau prüfen", pos: "45% 50%" },
+  unterlagen: { alt: "Geöffneter Ordner mit abgehefteten Unterlagen auf einem Holztisch", pos: "40% 55%" },
+  siedlung: { alt: "Dorf mit Einfamilienhäusern und roten Dächern zwischen grünen Wiesen, aus der Luft", pos: "50% 50%" },
 };
 
 /** Versionsnummer der Bilder: bei jedem Bildtausch erhöhen, damit Browser keine alte Fassung aus dem Cache zeigen. */
-export const IMG_V = "4";
+export const IMG_V = "5";
 export const img = (file: string) => `/img/${file}?v=${IMG_V}`;
 
 /** Bildangabe aus dem Bearbeitungsbereich normalisieren: "/img/rechner.webp" → Bildschlüssel "rechner" (mit Handy- und Kleinfassungen). */
