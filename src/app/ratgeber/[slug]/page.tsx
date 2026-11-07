@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import PageHero from "@/components/PageHero";
+import PageIntro from "@/components/PageIntro";
 import Faq from "@/components/Faq";
 import { IconArrow, IconCheck } from "@/components/Icons";
 import { articles } from "@/content/ratgeber";
@@ -26,6 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+/** Sprungmarke aus einer Zwischenüberschrift (für das Inhaltsverzeichnis) */
+function anchor(t: string) {
+  return t
+    .toLowerCase()
+    .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = articles.find((x) => x.slug === slug);
@@ -43,7 +52,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
-      <PageHero
+      <PageIntro
+        variant="article"
         title={a.title}
         lead={a.lead}
         crumbs={[
@@ -51,24 +61,36 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           { href: `/ratgeber/${a.slug}/`, label: a.title },
         ]}
         kicker={`${a.readingMinutes} Minuten Lesezeit · Stand ${a.updated}`}
-        actions={false}
-      />
-      <main id="inhalt">
-        <section className="sec">
-          <div className="wrap article">
-            <aside className="article-aside">
-              <img className="article-author" src={img("ilonka-karras-kopf.webp")} alt="" width={120} height={120} loading="lazy" />
-              <span>Von {site.owner}</span>
+        aside={
+          <div className="pintro-author">
+            <img src={img("ilonka-karras-kopf.webp")} alt="" width={96} height={96} />
+            <div>
+              <b>Von {site.owner}</b>
               <span>Bankfachwirtin (IHK)</span>
-              <a className="link-u" href={site.phoneHref} style={{ color: "var(--tinte)", justifySelf: "start" }}>
+              <a className="link-u" href={site.phoneHref}>
                 Frage stellen
                 <IconArrow />
               </a>
-            </aside>
+            </div>
+          </div>
+        }
+      />
+      <main id="inhalt">
+        <section className="sec sec-snug">
+          <div className="wrap article">
+            <nav className="toc" aria-label="Inhalt des Artikels">
+              <b>Inhalt</b>
+              {a.sections.map((s) => (
+                <a key={s.heading} href={`#${anchor(s.heading)}`}>
+                  {s.heading}
+                </a>
+              ))}
+              <a href="#das-wichtigste">Das Wichtigste in Kürze</a>
+            </nav>
             <article className="article-body prose">
               {a.sections.map((s) => (
                 <section key={s.heading}>
-                  <h2>{s.heading}</h2>
+                  <h2 id={anchor(s.heading)}>{s.heading}</h2>
                   {s.paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
@@ -85,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </section>
               ))}
               <div className="takeaway">
-                <h2>Das Wichtigste in Kürze</h2>
+                <h2 id="das-wichtigste">Das Wichtigste in Kürze</h2>
                 <ul>
                   {a.takeaway.map((t) => (
                     <li key={t}>

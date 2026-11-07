@@ -304,7 +304,7 @@ html.js .main-over { margin-top: -100vh; margin-top: -100svh; }
 /* ================================================================
    Unterseiten · Kopfbereich
    ================================================================ */
-.phero { position: relative; min-height: 82svh; color: #fff; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--tanne); }
+.phero { position: relative; min-height: 100svh; color: #fff; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--tanne); }
 .phero-img { position: absolute; inset: 0; width: 100%; height: 115%; object-fit: cover; will-change: transform; }
 .phero::after { content: ""; position: absolute; inset: 0; background:
   linear-gradient(180deg, rgba(4, 12, 24, 0.55) 0%, rgba(4, 12, 24, 0) 26%),
@@ -324,6 +324,52 @@ html.js .main-over { margin-top: -100vh; margin-top: -100svh; }
 .phero-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
 .phero.is-plain { min-height: 0; }
 .phero.is-plain .phero-in { padding-top: 150px; padding-bottom: clamp(36px, 5vw, 64px); }
+/* Heller Seitenkopf ohne Foto (Ratgeber, Über mich) */
+.pintro { position: relative; background: var(--papier); color: var(--tinte); padding-top: calc(150px + env(safe-area-inset-top, 0px)); padding-bottom: clamp(36px, 4.4vw, 72px); border-bottom: 1px solid var(--linie); }
+.pintro-in { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 72px); align-items: end; }
+.pintro .crumbs { color: var(--grau); opacity: 1; }
+.pintro .crumbs a { border-bottom-color: var(--linie); }
+.pintro .kicker { margin-top: 28px; color: var(--tinte); }
+.pintro-title { margin-top: 18px; color: var(--tanne); font-size: clamp(2.6rem, 5vw, 5.6rem); line-height: 1.0; text-wrap: balance; max-width: 18ch; }
+.pintro-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.pintro-w > span { display: inline-block; }
+.pintro-lead { margin: 24px 0 0; max-width: 54ch; color: var(--text-2); }
+.pintro-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.pintro-aside { min-width: 0; display: grid; }
+.pintro-note { border-top: 1px solid var(--tinte); padding-top: 22px; display: grid; gap: 18px; color: var(--text-2); max-width: 46ch; justify-self: end; }
+.pintro-note p { margin: 0; }
+/* Über mich: Porträt rechts, beginnt oben bündig mit dem Seitenkopf */
+.pintro-person .pintro-in { align-items: stretch; }
+.pintro-person .pintro-text { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 6px; }
+.pintro-portrait { margin: 0; position: relative; height: 100%; min-height: 520px; }
+.pintro-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; background: var(--papier-2); }
+.pintro-portrait figcaption { position: absolute; left: 0; bottom: 0; background: var(--tanne); color: #fff; padding: 14px 18px; font-size: 0.86rem; line-height: 1.4; }
+.pintro-portrait figcaption b { display: block; font-weight: 500; font-size: 0.98rem; }
+.pintro-person { padding-bottom: 0; }
+.pintro-person .pintro-text { padding-bottom: clamp(36px, 4.4vw, 72px); }
+/* Artikel: Autorin rechts im Seitenkopf, Inhaltsverzeichnis links neben dem Text */
+.pintro-author { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px; align-items: center; border-top: 1px solid var(--tinte); padding-top: 22px; max-width: 420px; justify-self: end; }
+.pintro-author img { width: 96px; height: 96px; object-fit: cover; background: var(--papier-2); }
+.pintro-author div { display: grid; gap: 4px; font-size: 0.92rem; color: var(--grau); }
+.pintro-author b { color: var(--tinte); font-weight: 500; font-size: 1rem; }
+.pintro-author .link-u { justify-self: start; margin-top: 6px; color: var(--tinte); }
+.toc { grid-column: 1 / span 3; position: sticky; top: 110px; align-self: start; display: grid; gap: 4px; font-size: 0.92rem; }
+.toc b { font-weight: 500; color: var(--tinte); margin-bottom: 8px; }
+.toc a { display: block; padding: 9px 0; border-top: 1px solid var(--linie); color: var(--grau); transition: color 0.3s; }
+.toc a:hover { color: var(--tanne); }
+.article-body h2[id] { scroll-margin-top: 110px; }
+.about-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 40px); align-items: start; }
+.about-grid .about-story { grid-column: 1 / span 7; }
+.about-grid .about-quote { grid-column: 9 / -1; position: sticky; top: 120px; }
+.sec.sec-snug { padding-top: clamp(32px, 4vw, 64px); }
+@media (max-width: 980px) {
+  .pintro-in { grid-template-columns: 1fr; }
+  .pintro-note, .pintro-author { justify-self: start; }
+  .pintro-portrait { min-height: 0; height: auto; aspect-ratio: 1 / 1; }
+  .pintro-person .pintro-text { padding-bottom: 0; }
+  .toc { display: none; }
+  .about-grid .about-story, .about-grid .about-quote { grid-column: 1 / -1; position: static; }
+}
 .band { position: relative; background: var(--tanne); color: #fff; padding-top: 150px; padding-bottom: clamp(36px, 5vw, 64px); }
 .band h1 { max-width: 20ch; }
 .band .t-lead { margin: 18px 0 0; max-width: 56ch; opacity: 0.9; }
@@ -332,7 +378,7 @@ html.js .main-over { margin-top: -100vh; margin-top: -100svh; }
   .phero-actions { align-items: flex-start; }
 }
 @media (max-width: 767px) {
-  .phero { min-height: 78svh; }
+  .phero { min-height: 100svh; }
   .phero-actions .btn { display: none; }
   .band { padding-top: 120px; }
 }
@@ -718,15 +764,16 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; background: v
 .about-quote { margin: 0; padding: clamp(22px, 2.4vw, 36px) 0 0; border-top: 1px solid var(--tinte); }
 .about-quote p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 2.4vw, 2.5rem); line-height: 1.18; color: var(--tanne); max-width: 30ch; }
 .about-quote footer { margin-top: 14px; font-size: 0.9rem; color: var(--grau); }
-.milestones { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--linie-hell); }
+.milestones { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); border-top: 1px solid var(--linie-hell); }
 .milestones li { padding: 26px clamp(14px, 1.6vw, 28px) 26px 0; border-bottom: 1px solid var(--linie-hell); display: grid; gap: 10px; align-content: start; }
-.milestones li:not(:nth-child(4n + 1)) { border-left: 1px solid var(--linie-hell); padding-left: clamp(14px, 1.6vw, 28px); }
+/* Alle Stationen in einer Reihe (Spaltenzahl kommt aus der Seite, höchstens 5) */
+.milestones li:not(:first-child) { border-left: 1px solid var(--linie-hell); padding-left: clamp(14px, 1.6vw, 28px); }
 .milestones span { font-family: var(--font-serif); font-size: 2.6rem; line-height: 0.9; color: var(--messing); }
 .milestones h3 { font-size: clamp(1.3rem, 1.6vw, 1.7rem); }
 .milestones p { margin: 0; color: rgba(244, 246, 249, 0.92); font-size: 0.97rem; }
 @media (max-width: 980px) {
   .milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .milestones li:not(:nth-child(4n + 1)) { border-left: 0; padding-left: 0; }
+  .milestones li:not(:first-child) { border-left: 0; padding-left: 0; }
   .milestones li:nth-child(even) { border-left: 1px solid var(--linie-hell); padding-left: clamp(14px, 1.6vw, 28px); }
 }
 @media (max-width: 640px) {

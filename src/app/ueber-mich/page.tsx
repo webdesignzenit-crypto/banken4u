@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
+import PageIntro from "@/components/PageIntro";
 import { Split } from "@/components/Split";
 import { IconArrow, IconCheck } from "@/components/Icons";
 import { img } from "@/content/images";
@@ -26,36 +26,50 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
-      <PageHero title={about.title} lead={about.lead} crumbs={[{ href: "/ueber-mich/", label: "Über mich" }]} kicker={about.kicker} />
+      <PageIntro
+        variant="person"
+        title={about.title}
+        lead={about.lead}
+        crumbs={[{ href: "/ueber-mich/", label: "Über mich" }]}
+        kicker={about.kicker}
+        aside={
+          <figure className="pintro-portrait">
+            <img
+              src={img("ilonka-karras.webp")}
+              srcSet={`${img("ilonka-karras-sm.webp")} 525w, ${img("ilonka-karras.webp")} 1050w`}
+              sizes="(max-width: 980px) 100vw, 40vw"
+              alt="Ilonka Karras, Bankfachwirtin (IHK) und Versicherungsfachfrau (IHK)"
+              width={1050}
+              height={1120}
+              fetchPriority="high"
+            />
+            <figcaption>
+              <b>{site.owner}</b>
+              Bankfachwirtin (IHK) und Versicherungsfachfrau (IHK)
+            </figcaption>
+          </figure>
+        }
+      >
+        <Link className="btn btn-tanne" href="/angebot/">
+          Angebot anfordern
+          <IconArrow />
+        </Link>
+        <a className="btn btn-linie" href={site.phoneHref}>
+          Anrufen: {site.phone}
+        </a>
+      </PageIntro>
       <main id="inhalt">
         <section className="sec">
-          <div className="wrap intro">
-            <figure className="portrait has-photo" data-reveal>
-              <img
-                src={img("ilonka-karras.webp")}
-                srcSet={`${img("ilonka-karras-sm.webp")} 525w, ${img("ilonka-karras.webp")} 1050w`}
-                sizes="(max-width: 980px) 100vw, 34vw"
-                alt="Ilonka Karras, Bankfachwirtin (IHK) und Versicherungsfachfrau (IHK)"
-                width={1050}
-                height={1120}
-                loading="lazy"
-              />
-              <figcaption>
-                <b>{site.owner}</b>
-                Bankfachwirtin (IHK) und Versicherungsfachfrau (IHK)
-              </figcaption>
-            </figure>
-            <div className="intro-text">
-              <div className="prose about-story" data-reveal>
-                {about.story.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-              <blockquote className="about-quote" data-reveal>
-                <p>{about.quote}</p>
-                <footer>{site.owner}</footer>
-              </blockquote>
+          <div className="wrap about-grid">
+            <div className="prose about-story" data-reveal>
+              {about.story.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
+            <blockquote className="about-quote" data-reveal>
+              <p>{about.quote}</p>
+              <footer>{site.owner}</footer>
+            </blockquote>
           </div>
         </section>
 
@@ -65,7 +79,7 @@ export default function Page() {
               <Split id="weg-titel" className="t-h2" text={about.wegTitel} />
               <p data-reveal>{about.wegText}</p>
             </div>
-            <ol className="milestones">
+            <ol className="milestones" style={{ ["--cols" as string]: Math.min(about.milestones.length, 5) }}>
               {about.milestones.map((m, i) => (
                 <li key={m.title} data-reveal style={{ ["--d" as string]: `${(i % 4) * 70}ms` }}>
                   <span aria-hidden>0{i + 1}</span>

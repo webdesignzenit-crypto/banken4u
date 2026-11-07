@@ -59,6 +59,8 @@ export default function Header() {
   // In der Vorschau liegt die Seite in einem Unterordner: auf die eigentliche Route zurückführen
   const pathname = raw.replace(/^.*?\/site(?=\/)/, "").replace(/index\.html$/, "") || "/";
   const isHome = pathname === "/";
+  // Seiten mit hellem Kopf (ohne Foto): Navigation in Logo-Blau statt Weiß
+  const isLight = isHome || /^\/(ratgeber|ueber-mich)(\/|$)/.test(pathname);
   const lenis = useLenis();
   const [scrolled, setScrolled] = useState(false);
   const [barOn, setBarOn] = useState(false);
@@ -139,7 +141,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`hdr${isHome ? " hdr-light" : ""}${scrolled && !solid ? " is-scrolled" : ""}${solid ? " hdr-solid" : ""}`}>
+      <header className={`hdr${isLight ? " hdr-light" : ""}${scrolled && !solid ? " is-scrolled" : ""}${solid ? " hdr-solid" : ""}`}>
         <div className="hdr-top wrap" ref={topRef} onMouseEnter={cancelClose} onMouseLeave={() => mega && scheduleClose()}>
           <Logo />
           <div className="hdr-right">
