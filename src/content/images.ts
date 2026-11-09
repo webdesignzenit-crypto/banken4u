@@ -27,7 +27,7 @@ export const images: Record<string, { alt: string; pos?: string }> = {
 };
 
 /** Versionsnummer der Bilder: bei jedem Bildtausch erhöhen, damit Browser keine alte Fassung aus dem Cache zeigen. */
-export const IMG_V = "7";
+export const IMG_V = "8";
 export const img = (file: string) => `/img/${file}?v=${IMG_V}`;
 
 /** Bildangabe aus dem Bearbeitungsbereich normalisieren: "/img/rechner.webp" → Bildschlüssel "rechner" (mit Handy- und Kleinfassungen). */
