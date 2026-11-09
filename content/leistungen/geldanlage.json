@@ -88,6 +88,19 @@
     }
   ],
   "faqNote": "Viele dieser Fragen sind am Telefon schnell beantwortet. Geht es um VL, legen Sie Ihre Gehaltsabrechnung bereit.",
+  "linksText": "Tagesgeld und Girokonto eröffnen Sie hier direkt online. Für Geld, das länger liegen bleiben soll, sprechen wir lieber vorher miteinander.",
+  "links": [
+    {
+      "label": "Tagesgeld vergleichen und eröffnen",
+      "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=23",
+      "text": "Online-Vergleich bei Procheck24"
+    },
+    {
+      "label": "Girokonto vergleichen und eröffnen",
+      "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=3",
+      "text": "Online-Vergleich bei Procheck24"
+    }
+  ],
   "ctaTitle": "Erst die Reserve, dann alles Weitere",
   "ctaText": "Wir klären, wie groß Ihre Rücklage sein sollte und wo sie gut liegt. Außerdem schauen wir nach, ob Ihr Arbeitgeber VL zahlt, die Sie bisher nicht nutzen.",
   "related": [

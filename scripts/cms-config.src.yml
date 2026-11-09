@@ -89,6 +89,7 @@ x-leistung: &leistung
       - { label: Linktext, name: label, widget: string }
       - { label: Adresse (https://…), name: href, widget: string }
       - { label: Kurze Beschreibung, name: text, widget: string, required: false }
+  - { label: "Link zur Angebotsanforderung (Maklerpool)", name: angebotLink, widget: string, required: false, hint: "Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website." }
   - { label: Überschrift im Abschlussbereich, name: ctaTitle, widget: string }
   - { label: Text im Abschlussbereich, name: ctaText, widget: text }
   - { label: "Google: Seitentitel", name: metaTitle, widget: string, hint: "Höchstens 60 Zeichen" }
@@ -404,6 +405,8 @@ collections:
           - { label: Jahre Erfahrung, name: years, widget: string }
           - { label: "Bewertung (z. B. 5,0)", name: rating, widget: string }
           - { label: Anzahl Bewertungen, name: ratingCount, widget: string }
+          - { label: Anzahl Bewertungsportale, name: ratingSources, widget: string }
+          - { label: "Auszeichnung (wird bei den Bewertungen eingeblendet)", name: auszeichnung, widget: string, required: false, hint: "Leer lassen = keine Einblendung" }
           - label: Bewertungsportale
             name: reviewLinks
             widget: object

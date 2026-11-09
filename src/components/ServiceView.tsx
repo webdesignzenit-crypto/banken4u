@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageHero, { type Crumb } from "./PageHero";
 import Faq from "./Faq";
 import { Split } from "./Split";
+import ExternalEmbed from "./ExternalEmbed";
 import { IconArrow, IconCheck } from "./Icons";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
@@ -128,7 +129,44 @@ export default function ServiceView({ slug }: { slug: string }) {
           </section>
         ) : null}
 
-        <section className="sec" style={{ paddingTop: isHub ? undefined : 0 }}>
+        {isHub ? (
+          <section className="sec" aria-labelledby="zinsen-titel">
+            <div className="wrap">
+              <div className="sec-head">
+                <Split id="zinsen-titel" className="t-h2" text="Aktuelle Bauzinsen." />
+                <p data-reveal>Die Zinscharts zeigen, wie sich die Bauzinsen zuletzt entwickelt haben. Ihr eigener Zins hängt von Eigenkapital, Zinsbindung und Objekt ab. Den rechne ich Ihnen gern konkret aus.</p>
+              </div>
+              <div className="zins-grid">
+                <ExternalEmbed kind="zinscharts" />
+                <aside className="zins-angebot" data-reveal>
+                  <h3>Ihr Finanzierungsangebot</h3>
+                  <p>
+                    {s.angebotLink
+                      ? "Hier fordern Sie Ihr Angebot direkt online an. Ihre Angaben kommen ohne Umweg in mein Baufinanzierungsprogramm, und ich melde mich mit den ersten Zahlen bei Ihnen."
+                      : "Schicken Sie mir Ihre Eckdaten über das Anfrageformular. Ich melde mich mit den ersten Zahlen und den nächsten Schritten bei Ihnen."}
+                  </p>
+                  {s.angebotLink ? (
+                    <a className="btn btn-messing" href={s.angebotLink} target="_blank" rel="noopener">
+                      Angebot online anfordern
+                      <IconArrow />
+                    </a>
+                  ) : (
+                    <Link className="btn btn-messing" href="/angebot/">
+                      Angebot anfordern
+                      <IconArrow />
+                    </Link>
+                  )}
+                  <a className="link-u" href={site.phoneHref}>
+                    Lieber anrufen: {site.phone}
+                    <IconArrow />
+                  </a>
+                </aside>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="sec" style={{ paddingTop: 0 }}>
           <div className="wrap">
             <div className="chapters">
               {s.sections.map((sec) => (

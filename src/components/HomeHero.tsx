@@ -73,7 +73,7 @@ export default function HomeHero() {
             <div className="proof">
               <Stars />
               <strong>{site.rating}</strong>
-              <span>aus {site.ratingCount} geprüften Bewertungen</span>
+              <span>aus {site.ratingCount} Bewertungen</span>
             </div>
             <div className="btns">
               <a className="btn btn-hell" href={site.phoneHref}>

@@ -91,8 +91,13 @@
     "baufinanzierung",
     "ratenkredit"
   ],
-  "linksText": "Für Urlaubs- und Geschäftsreisen schließen Sie den Krankenschutz hier direkt bei Care Concept ab. Planen Sie einen längeren Aufenthalt im Ausland, melden Sie sich vorher bei mir.",
+  "linksText": "Kfz-Versicherung und Auslandskrankenversicherung schließen Sie hier direkt online ab. Planen Sie einen längeren Aufenthalt im Ausland oder haben Sie Fragen zu Ihrem bestehenden Vertrag, melden Sie sich vorher bei mir.",
   "links": [
+    {
+      "label": "Kfz-Versicherung vergleichen und abschließen",
+      "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=4",
+      "text": "Online-Vergleich bei Procheck24"
+    },
     {
       "label": "Auslandskrankenversicherung abschließen",
       "href": "http://www.care-concept.de/index.php?vmnr=0021490162&blanko=ja&fs=db&mail=ilonka.karras%40banken4u.de",

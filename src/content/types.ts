@@ -52,6 +52,8 @@ export type ServicePage = {
   linksText?: string;
   /** Direkte Abschlussmöglichkeiten (Rechner, Antragsstrecken der Partner) */
   links?: { label: string; href: string; text?: string }[];
+  /** Link zur Angebotsanforderung beim Maklerpool (nur Baufinanzierung-Übersicht) */
+  angebotLink?: string;
 };
 
 export type Article = {

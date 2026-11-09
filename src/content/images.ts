@@ -4,7 +4,7 @@ export type ImgKey = keyof typeof sizes;
 
 export const images: Record<string, { alt: string; pos?: string }> = {
   hero: { alt: "Modellhaus mit roter Giebelfront und Hausschlüssel auf einem Holztisch", pos: "100% 40%" },
-  bauhub: { alt: "Hausmodell mit rotem Giebel auf einem Bauplan, davor eine Lupe, dahinter ein Sparschwein", pos: "60% 40%" },
+  bauhub: { alt: "Hausmodell mit blauem Dach und rotem Giebel auf einem Bauplan, davor eine Lupe, dahinter ein Sparschwein", pos: "60% 40%" },
   schluessel: { alt: "Hand hält Hausschlüssel mit Anhänger in Hausform im Flur eines neuen Zuhauses", pos: "50% 40%" },
   kauf: { alt: "Hausmodell im Querschnitt mit eingestecktem 50-Euro-Schein und Haustürschlüssel auf Auswertungen", pos: "40% 40%" },
   neubau: { alt: "Einfamilienhaus im Rohbau: Ziegelmauerwerk mit frisch aufgestelltem Dachstuhl und Schalung vor blauem Himmel", pos: "50% 45%" },
@@ -27,7 +27,7 @@ export const images: Record<string, { alt: string; pos?: string }> = {
 };
 
 /** Versionsnummer der Bilder: bei jedem Bildtausch erhöhen, damit Browser keine alte Fassung aus dem Cache zeigen. */
-export const IMG_V = "6";
+export const IMG_V = "7";
 export const img = (file: string) => `/img/${file}?v=${IMG_V}`;
 
 /** Bildangabe aus dem Bearbeitungsbereich normalisieren: "/img/rechner.webp" → Bildschlüssel "rechner" (mit Handy- und Kleinfassungen). */

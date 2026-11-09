@@ -362,6 +362,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -510,6 +515,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -658,6 +668,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -806,6 +821,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -954,6 +974,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1102,6 +1127,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1250,6 +1280,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1398,6 +1433,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1546,6 +1586,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1694,6 +1739,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -1842,6 +1892,11 @@ collections:
         widget: string
         required: false
       label_singular: Link
+    - label: Link zur Angebotsanforderung (Maklerpool)
+      name: angebotLink
+      widget: string
+      required: false
+      hint: Nur auf der Baufinanzierung-Übersicht. Leer lassen = der Button führt zum Anfrageformular der Website.
     - label: Überschrift im Abschlussbereich
       name: ctaTitle
       widget: string
@@ -2269,6 +2324,14 @@ collections:
     - label: Anzahl Bewertungen
       name: ratingCount
       widget: string
+    - label: Anzahl Bewertungsportale
+      name: ratingSources
+      widget: string
+    - label: Auszeichnung (wird bei den Bewertungen eingeblendet)
+      name: auszeichnung
+      widget: string
+      required: false
+      hint: Leer lassen = keine Einblendung
     - label: Bewertungsportale
       name: reviewLinks
       widget: object

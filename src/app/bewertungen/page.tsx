@@ -4,6 +4,7 @@ import Band from "@/components/Band";
 import { Split } from "@/components/Split";
 import { IconArrow, Stars } from "@/components/Icons";
 import ReviewSlider from "@/components/ReviewSlider";
+import ExternalEmbed from "@/components/ExternalEmbed";
 import { site } from "@/content/site";
 import seiten from "../../../content/seiten.json";
 
@@ -28,7 +29,7 @@ export default function Page() {
           <div>
             <Stars />
             <p>
-              aus {site.ratingCount} geprüften Bewertungen bei KennstDuEinen, zusätzlich Bewertungen bei ImmobilienScout24
+              aus {site.ratingCount} Bewertungen von {site.ratingSources} Portalen, darunter KennstDuEinen und ImmobilienScout24
             </p>
           </div>
         </div>
@@ -53,6 +54,26 @@ export default function Page() {
               </div>
             </div>
             <ReviewSlider />
+          </div>
+        </section>
+        <section className="sec" style={{ paddingTop: 0 }} aria-labelledby="portale-titel">
+          <div className="wrap">
+            <div className="sec-head">
+              <Split id="portale-titel" className="t-h2" text="Direkt von den Portalen." />
+              <div data-reveal>
+                <p style={{ margin: 0 }}>Hier sehen Sie die aktuellen Bewertungen so, wie KennstDuEinen und ImmobilienScout24 sie anzeigen.</p>
+                {site.auszeichnung ? (
+                  <p className="award">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden><circle cx="12" cy="9" r="6" /><path d="M8.5 13.8 7 22l5-3 5 3-1.5-8.2" /><path d="m12 6.2.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" /></svg>
+                    <span>{site.auszeichnung}</span>
+                  </p>
+                ) : null}
+              </div>
+            </div>
+            <div className="portal-widgets">
+              <ExternalEmbed kind="kennstdueinen" />
+              <ExternalEmbed kind="immoscout" />
+            </div>
           </div>
         </section>
         <section className="sec alt" aria-labelledby="cta-titel">
