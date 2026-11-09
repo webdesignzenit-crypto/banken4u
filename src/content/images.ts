@@ -12,7 +12,7 @@ export const images: Record<string, { alt: string; pos?: string }> = {
   umschuldung: { alt: "Ausgebreitete Euro-Banknoten zu 20, 100 und 200 Euro", pos: "60% 35%" },
   foerder: { alt: "Euro-Scheine, Münzen und Hausschlüssel mit Haus-Anhänger neben einem Taschenrechner", pos: "45% 50%" },
   modernisierung: { alt: "Handwerker setzt ein Solarmodul auf das Dach eines Wohnhauses", pos: "30% 30%" },
-  ratenkredit: { alt: "Fahrzeuge auf dem Hof eines Autohauses", pos: "30% 60%" },
+  ratenkredit: { alt: "Handschlag nach dem Autokauf im Autohaus", pos: "50% 35%" },
   bausparen: { alt: "Taschenrechner, kleines Holzhaus und orangefarbenes Sparschwein auf blauem Grund", pos: "50% 40%" },
   geldanlage: { alt: "Hand mit 50-Euro-Scheinen vor Taschenrechner und Auswertungen", pos: "50% 55%" },
   versicherungen: { alt: "Silhouette eines Menschen, der im Sonnenuntergang auf einem Felsen balanciert", pos: "45% 55%" },
@@ -27,7 +27,7 @@ export const images: Record<string, { alt: string; pos?: string }> = {
 };
 
 /** Versionsnummer der Bilder: bei jedem Bildtausch erhöhen, damit Browser keine alte Fassung aus dem Cache zeigen. */
-export const IMG_V = "12";
+export const IMG_V = "13";
 export const img = (file: string) => `/img/${file}?v=${IMG_V}`;
 
 /** Bildangabe aus dem Bearbeitungsbereich normalisieren: "/img/rechner.webp" → Bildschlüssel "rechner" (mit Handy- und Kleinfassungen). */
