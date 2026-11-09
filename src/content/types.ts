@@ -54,6 +54,8 @@ export type ServicePage = {
   links?: { label: string; href: string; text?: string }[];
   /** Link zur Angebotsanforderung beim Maklerpool (nur Baufinanzierung-Übersicht) */
   angebotLink?: string;
+  /** Schlüssel des Europace-Angebotsformulars (Maklerpool), leer = eigenes Anfrageformular */
+  angebotWidget?: string;
 };
 
 export type Article = {

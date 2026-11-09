@@ -8,18 +8,19 @@ import { useEffect, useRef, useState } from "react";
  * Vorher geht keine Verbindung zum Anbieter raus. Die Zustimmung gilt für alle drei
  * Inhalte und wird im Browser gemerkt (siehe Datenschutzerklärung).
  */
-type Kind = "zinscharts" | "kennstdueinen" | "immoscout";
+type Kind = "zinscharts" | "kennstdueinen" | "immoscout" | "europace";
 
 const INFO: Record<Kind, { title: string; provider: string }> = {
   zinscharts: { title: "Aktuelle Zinscharts", provider: "der Starpool Finanz GmbH" },
   kennstdueinen: { title: "Bewertungen bei KennstDuEinen", provider: "KennstDuEinen.de (inklusive Schriften von Google Fonts)" },
   immoscout: { title: "Bewertungen bei ImmobilienScout24", provider: "der Immobilien Scout GmbH" },
+  europace: { title: "Finanzierungsangebot online anfordern", provider: "der Europace AG" },
 };
 
 const KEY = "b4u-externe-inhalte";
 const EVT = "b4u-extern";
 
-export default function ExternalEmbed({ kind }: { kind: Kind }) {
+export default function ExternalEmbed({ kind, widgetKey }: { kind: Kind; widgetKey?: string }) {
   const [on, setOn] = useState(false);
   const box = useRef<HTMLDivElement>(null);
 
@@ -46,6 +47,17 @@ export default function ExternalEmbed({ kind }: { kind: Kind }) {
       const s = document.createElement("script");
       s.src = "https://www.kennstdueinen.de/widget/widgetv2/100037/kde-widget-responsive/8/kde/googlefont/4/Open%2BSans%3A400%2C600%2C400italic%2C600italic";
       el.appendChild(s);
+    } else if (kind === "europace") {
+      const w = document.createElement("baufi-passt-flex");
+      w.setAttribute("frontend-key-id", widgetKey || "");
+      w.setAttribute("datenkontext", "ECHT_GESCHAEFT");
+      el.appendChild(w);
+      if (!document.querySelector('script[data-b4u="europace"]')) {
+        const s = document.createElement("script");
+        s.src = "https://baufi-passt.passt.aws.europace.de/baufi-passt-flex/baufi-passt-flex.js";
+        s.dataset.b4u = "europace";
+        document.body.appendChild(s);
+      }
     } else {
       const s = document.createElement("script");
       s.id = "is24BaufinanzierungWidget";
@@ -53,7 +65,7 @@ export default function ExternalEmbed({ kind }: { kind: Kind }) {
       s.src = "https://www.immobilienscout24.de/baufinanzierung/static/js/rating-widget.js";
       el.appendChild(s);
     }
-  }, [on, kind]);
+  }, [on, kind, widgetKey]);
 
   const allow = () => {
     try {
@@ -71,12 +83,12 @@ export default function ExternalEmbed({ kind }: { kind: Kind }) {
         <iframe scrolling="no" src="https://portal.starpool.de/interestRateCharts/0175eef1-cddd-4e55-89a1-5ed067ba42c7" title="Aktuelle Zinscharts der Starpool Finanz GmbH" loading="lazy" />
       </div>
     ) : (
-      <div className="ext ext-widget" ref={box} />
+      <div className={`ext ext-widget${kind === "europace" ? " ext-europace" : ""}`} ref={box} />
     );
   }
 
   return (
-    <div className={`ext ext-gate${kind === "zinscharts" ? " ext-gate-big" : ""}`}>
+    <div className={`ext ext-gate${kind === "zinscharts" || kind === "europace" ? " ext-gate-big" : ""}`}>
       <b>{info.title}</b>
       <p>
         Dieser Inhalt kommt von {info.provider}. Erst wenn Sie ihn laden, baut Ihr Browser eine Verbindung zum Anbieter auf und überträgt dabei Daten wie Ihre IP-Adresse.{" "}

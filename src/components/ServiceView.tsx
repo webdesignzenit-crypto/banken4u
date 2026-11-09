@@ -141,11 +141,16 @@ export default function ServiceView({ slug }: { slug: string }) {
                 <aside className="zins-angebot" data-reveal>
                   <h3>Ihr Finanzierungsangebot</h3>
                   <p>
-                    {s.angebotLink
+                    {s.angebotWidget || s.angebotLink
                       ? "Hier fordern Sie Ihr Angebot direkt online an. Ihre Angaben kommen ohne Umweg in mein Baufinanzierungsprogramm, und ich melde mich mit den ersten Zahlen bei Ihnen."
                       : "Schicken Sie mir Ihre Eckdaten über das Anfrageformular. Ich melde mich mit den ersten Zahlen und den nächsten Schritten bei Ihnen."}
                   </p>
-                  {s.angebotLink ? (
+                  {s.angebotWidget ? (
+                    <a className="btn btn-messing" href="#angebot-online">
+                      Angebot online anfordern
+                      <IconArrow />
+                    </a>
+                  ) : s.angebotLink ? (
                     <a className="btn btn-messing" href={s.angebotLink} target="_blank" rel="noopener">
                       Angebot online anfordern
                       <IconArrow />
@@ -162,6 +167,18 @@ export default function ServiceView({ slug }: { slug: string }) {
                   </a>
                 </aside>
               </div>
+            </div>
+          </section>
+        ) : null}
+
+        {isHub && s.angebotWidget ? (
+          <section className="sec sec-snug" id="angebot-online" aria-labelledby="angebot-online-titel">
+            <div className="wrap">
+              <div className="sec-head">
+                <Split id="angebot-online-titel" className="t-h2" text="Finanzierungsangebot online anfordern." />
+                <p data-reveal>Ein paar Angaben zu Vorhaben, Einkommen und Eigenkapital genügen. Ihre Daten kommen direkt bei mir an, und ich melde mich mit einem ersten Angebot.</p>
+              </div>
+              <ExternalEmbed kind="europace" widgetKey={s.angebotWidget} />
             </div>
           </section>
         ) : null}
