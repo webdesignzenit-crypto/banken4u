@@ -84,12 +84,13 @@
     }
   ],
   "faqNote": "Liegt Ihnen schon ein Kreditangebot vor, lesen Sie mir am Telefon einfach die Eckdaten vor.",
-  "linksText": "Den Ratenkredit können Sie hier direkt online vergleichen und beantragen. Haben Sie vorher Fragen zur Rate, zur Laufzeit oder zum Ablösen alter Kredite, rufen Sie mich an.",
+  "linksText": "Den Ratenkredit können Sie hier direkt online vergleichen und abschließen. Lieber persönlich? Dann fordern Sie Ihr Angebot bei mir an oder rufen Sie mich an.",
   "links": [
     {
       "label": "Ratenkredit vergleichen und beantragen",
       "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=1",
-      "text": "Online-Vergleich bei Procheck24, meinem Partner für Ratenkredite"
+      "text": "Online-Vergleich bei Procheck24, meinem Partner für Ratenkredite",
+      "button": "Ratenkredit online abschließen"
     }
   ],
   "ctaTitle": "Ihre Rate, einmal in Ruhe durchgerechnet",
@@ -98,5 +99,6 @@
     "baufinanzierung/modernisierung",
     "geldanlage",
     "versicherungen"
-  ]
+  ],
+  "anfrageThema": "ratenkredit"
 }

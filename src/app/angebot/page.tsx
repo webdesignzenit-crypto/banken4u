@@ -31,10 +31,10 @@ export default function Page() {
                   <IconCheck /> Ich prüfe Ihre Angaben persönlich
                 </li>
                 <li>
-                  <IconCheck /> Wir besprechen Ihr Vorhaben am Telefon
+                  <IconCheck /> Wir besprechen Ihr Anliegen am Telefon
                 </li>
                 <li>
-                  <IconCheck /> Sie erhalten passende Angebote aus über {site.banks} Banken
+                  <IconCheck /> Sie erhalten passende Angebote im Vergleich
                 </li>
                 <li>
                   <IconCheck /> Unverbindlich und ohne Verpflichtung

@@ -2,22 +2,63 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { IconArrow } from "./Icons";
 import { site } from "@/content/site";
 
-const anliegen = [
-  { v: "Immobilienkauf", t: "Haus oder Wohnung kaufen" },
-  { v: "Neubau", t: "Selbst bauen" },
-  { v: "Anschlussfinanzierung", t: "Zinsbindung läuft aus" },
-  { v: "Umschuldung", t: "Laufendes Darlehen ablösen" },
-  { v: "Modernisierung", t: "Sanieren oder umbauen" },
-  { v: "Ratenkredit", t: "Auto, Möbel, Anschaffung" },
-  { v: "Bausparen", t: "Für später vorsorgen" },
-  { v: "Versicherung oder Geldanlage", t: "PKV, Kfz, Tagesgeld und mehr" },
+type Gruppe = "baufi" | "anschluss" | "kredit" | "bauspar" | "vl" | "vers";
+
+const anliegen: { v: string; t: string; g: Gruppe; key: string }[] = [
+  { v: "Immobilienkauf", t: "Haus oder Wohnung kaufen", g: "baufi", key: "immobilienkauf" },
+  { v: "Neubau", t: "Selbst bauen", g: "baufi", key: "neubau" },
+  { v: "Anschlussfinanzierung", t: "Zinsbindung läuft aus", g: "anschluss", key: "anschlussfinanzierung" },
+  { v: "Umschuldung", t: "Laufendes Darlehen ablösen", g: "anschluss", key: "umschuldung" },
+  { v: "Modernisierung", t: "Sanieren oder umbauen", g: "baufi", key: "modernisierung" },
+  { v: "Förderkredit (KfW)", t: "Förderung fürs Bauen und Sanieren", g: "baufi", key: "foerderkredite" },
+  { v: "Ratenkredit", t: "Auto, Möbel, Anschaffung", g: "kredit", key: "ratenkredit" },
+  { v: "Bausparen", t: "Für später vorsorgen", g: "bauspar", key: "bausparen" },
+  { v: "Vermögenswirksame Leistungen (VL)", t: "Zuschuss vom Arbeitgeber anlegen", g: "vl", key: "vl" },
+  { v: "Versicherung", t: "Haftpflicht, Hausrat, BU und mehr", g: "vers", key: "versicherung" },
 ];
 
-const steps = ["Anliegen", "Vorhaben", "Zu Ihnen", "Kontakt"];
+const titel: Record<Gruppe, string> = {
+  baufi: "Ihr Vorhaben in Zahlen",
+  anschluss: "Ihre laufende Finanzierung",
+  kredit: "Ihr Kreditwunsch",
+  bauspar: "Ihr Bausparwunsch",
+  vl: "Ihre vermögenswirksamen Leistungen",
+  vers: "Welche Versicherung suchen Sie?",
+};
+
+const steps = ["Anliegen", "Details", "Zu Ihnen", "Kontakt"];
+
+/** Betragsfeld mit Euro-Zeichen */
+function Euro({ id, name, label, ph }: { id: string; name: string; label: string; ph: string }) {
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <div className="unit">
+        <input id={id} name={name} type="text" inputMode="numeric" placeholder={ph} />
+        <span>€</span>
+      </div>
+    </div>
+  );
+}
+
+function Auswahl({ id, name, label, opts, def }: { id: string; name: string; label: string; opts: string[]; def?: string }) {
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <select id={id} name={name} defaultValue={def ?? opts[0]}>
+        {opts.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+const zeitpunkte = ["So schnell wie möglich", "In den nächsten 3 Monaten", "In 3 bis 12 Monaten", "Später, ich informiere mich"];
 
 export default function OfferForm() {
   const router = useRouter();
@@ -25,6 +66,15 @@ export default function OfferForm() {
   const [step, setStep] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [wahl, setWahl] = useState(anliegen[0].v);
+  const gruppe = (anliegen.find((a) => a.v === wahl) ?? anliegen[0]).g;
+  const istKredit = gruppe === "baufi" || gruppe === "anschluss" || gruppe === "kredit";
+
+  useEffect(() => {
+    const key = new URLSearchParams(window.location.search).get("thema");
+    const hit = anliegen.find((a) => a.key === key);
+    if (hit) setWahl(hit.v);
+  }, []);
 
   const stepValid = (i: number) => {
     const el = form.current?.querySelector<HTMLFieldSetElement>(`[data-step="${i}"]`);
@@ -108,9 +158,9 @@ export default function OfferForm() {
       <fieldset className="fstep" data-step="0" hidden={step !== 0} style={{ border: 0, padding: 0, margin: 0 }}>
         <h2 tabIndex={-1}>Worum geht es?</h2>
         <div className="choices" role="radiogroup" aria-label="Anliegen">
-          {anliegen.map((a, i) => (
+          {anliegen.map((a) => (
             <label className="choice" key={a.v}>
-              <input type="radio" name="anliegen" value={a.v} required defaultChecked={i === 0} />
+              <input type="radio" name="anliegen" value={a.v} required checked={wahl === a.v} onChange={() => setWahl(a.v)} />
               <span>
                 <b>{a.v}</b>
                 <small>{a.t}</small>
@@ -121,48 +171,65 @@ export default function OfferForm() {
       </fieldset>
 
       <fieldset className="fstep" data-step="1" hidden={step !== 1} style={{ border: 0, padding: 0, margin: 0 }}>
-        <h2 tabIndex={-1}>Ihr Vorhaben in Zahlen</h2>
+        <h2 tabIndex={-1}>{titel[gruppe]}</h2>
         <p style={{ margin: 0, color: "var(--text-2)" }}>Grobe Angaben genügen. Was Sie noch nicht wissen, lassen Sie einfach frei.</p>
-        <div className="two">
-          <div className="field">
-            <label htmlFor="f-betrag">Kaufpreis oder Kosten des Vorhabens</label>
-            <div className="unit">
-              <input id="f-betrag" name="kosten" type="text" inputMode="numeric" placeholder="z. B. 350.000" />
-              <span>€</span>
-            </div>
-          </div>
-          <div className="field">
-            <label htmlFor="f-ek">Eigenkapital</label>
-            <div className="unit">
-              <input id="f-ek" name="eigenkapital" type="text" inputMode="numeric" placeholder="z. B. 60.000" />
-              <span>€</span>
-            </div>
-          </div>
-          <div className="field">
-            <label htmlFor="f-darlehen">Gewünschter Darlehensbetrag</label>
-            <div className="unit">
-              <input id="f-darlehen" name="darlehen" type="text" inputMode="numeric" placeholder="z. B. 290.000" />
-              <span>€</span>
-            </div>
-          </div>
-          <div className="field">
-            <label htmlFor="f-zeit">Wann soll es losgehen?</label>
-            <select id="f-zeit" name="zeitpunkt" defaultValue="In den nächsten 3 Monaten">
-              <option>So schnell wie möglich</option>
-              <option>In den nächsten 3 Monaten</option>
-              <option>In 3 bis 12 Monaten</option>
-              <option>Später, ich informiere mich</option>
-            </select>
-          </div>
+
+        {/* Alle Gruppen stehen im HTML, damit das Formular jedes Feld kennt; sichtbar und gesendet wird nur die passende */}
+        <fieldset className="two fgroup" disabled={gruppe !== "baufi"} hidden={gruppe !== "baufi"}>
+          <Euro id="f-kosten" name="kosten" label="Kaufpreis oder Kosten des Vorhabens" ph="z. B. 350.000" />
+          <Euro id="f-ek" name="eigenkapital" label="Eigenkapital" ph="z. B. 60.000" />
+          <Euro id="f-darlehen" name="darlehen" label="Gewünschter Darlehensbetrag" ph="z. B. 290.000" />
+          <Auswahl id="f-zeit" name="zeitpunkt" label="Wann soll es losgehen?" opts={zeitpunkte} def="In den nächsten 3 Monaten" />
           <div className="field">
             <label htmlFor="f-plz">PLZ und Ort der Immobilie</label>
             <input id="f-plz" name="objekt_ort" type="text" autoComplete="off" placeholder="z. B. 01689 Weinböhla" />
           </div>
+        </fieldset>
+
+        <fieldset className="two fgroup" disabled={gruppe !== "anschluss"} hidden={gruppe !== "anschluss"}>
+          <Euro id="f-rest" name="restschuld" label="Restschuld zum Ende der Zinsbindung" ph="z. B. 180.000" />
           <div className="field">
-            <label htmlFor="f-zinsbindung">Zinsbindung läuft aus am</label>
-            <input id="f-zinsbindung" name="zinsbindung_ende" type="text" placeholder="nur bei Anschlussfinanzierung" />
+            <label htmlFor="f-zinsbindung">Zinsbindung endet am</label>
+            <input id="f-zinsbindung" name="zinsbindung_ende" type="text" placeholder="z. B. 03/2027" />
           </div>
-        </div>
+          <Euro id="f-wert" name="objektwert" label="Ungefährer Wert der Immobilie" ph="z. B. 400.000" />
+          <div className="field">
+            <label htmlFor="f-bank">Bisherige Bank</label>
+            <input id="f-bank" name="bisherige_bank" type="text" placeholder="optional" />
+          </div>
+          <div className="field">
+            <label htmlFor="f-plz2">PLZ und Ort der Immobilie</label>
+            <input id="f-plz2" name="objekt_ort_anschluss" type="text" autoComplete="off" placeholder="z. B. 01689 Weinböhla" />
+          </div>
+        </fieldset>
+
+        <fieldset className="two fgroup" disabled={gruppe !== "kredit"} hidden={gruppe !== "kredit"}>
+          <Euro id="f-kredit" name="kreditbetrag" label="Gewünschter Kreditbetrag" ph="z. B. 15.000" />
+          <Auswahl id="f-laufzeit" name="laufzeit" label="Wunschlaufzeit" opts={["12 Monate", "24 Monate", "36 Monate", "48 Monate", "60 Monate", "72 Monate", "84 Monate", "96 Monate", "120 Monate", "Noch offen"]} def="60 Monate" />
+          <Auswahl id="f-zweck" name="verwendung" label="Wofür ist der Kredit?" opts={["Auto", "Möbel und Einrichtung", "Umschuldung alter Kredite", "Modernisierung", "Freie Verwendung", "Sonstiges"]} />
+          <Auswahl id="f-zeit2" name="zeitpunkt_kredit" label="Wann brauchen Sie das Geld?" opts={zeitpunkte} />
+        </fieldset>
+
+        <fieldset className="two fgroup" disabled={gruppe !== "bauspar"} hidden={gruppe !== "bauspar"}>
+          <Euro id="f-summe" name="bausparsumme" label="Gewünschte Bausparsumme" ph="z. B. 50.000" />
+          <Euro id="f-rate" name="sparrate" label="Monatlicher Sparbetrag" ph="z. B. 150" />
+          <Auswahl id="f-ziel" name="bausparziel" label="Wofür sparen Sie?" opts={["Bauen oder kaufen", "Modernisieren", "Anschlussfinanzierung absichern", "Vermögen aufbauen", "Noch offen"]} />
+          <Auswahl id="f-wann" name="bauspar_zeitraum" label="Wann brauchen Sie das Geld?" opts={["In 3 bis 5 Jahren", "In 5 bis 10 Jahren", "In mehr als 10 Jahren", "Noch offen"]} />
+        </fieldset>
+
+        <fieldset className="two fgroup" disabled={gruppe !== "vl"} hidden={gruppe !== "vl"}>
+          <Auswahl id="f-vlag" name="vl_arbeitgeber" label="Zahlt Ihr Arbeitgeber VL?" opts={["Ja", "Nein", "Weiß ich nicht"]} />
+          <Euro id="f-vlbetrag" name="vl_betrag" label="Betrag im Monat" ph="z. B. 40" />
+          <Auswahl id="f-vlanlage" name="vl_anlage" label="Wie möchten Sie anlegen?" opts={["Beratung gewünscht", "Bausparvertrag", "Fondssparplan", "Banksparplan"]} />
+          <Auswahl id="f-vlvertrag" name="vl_vertrag" label="Haben Sie schon einen VL-Vertrag?" opts={["Nein", "Ja, läuft aus", "Ja, ich möchte wechseln"]} />
+        </fieldset>
+
+        <fieldset className="two fgroup" disabled={gruppe !== "vers"} hidden={gruppe !== "vers"}>
+          <Auswahl id="f-vart" name="versicherung" label="Welche Versicherung?" opts={["Privathaftpflicht", "Hausrat", "Wohngebäude", "Berufsunfähigkeit", "Risikolebensversicherung", "Private Krankenversicherung", "Unfallversicherung", "Rechtsschutz", "Mehrere, bitte beraten Sie mich", "Sonstige"]} />
+          <Auswahl id="f-vwer" name="versicherte_personen" label="Für wen?" opts={["Nur für mich", "Für mich und meinen Partner", "Für die ganze Familie"]} />
+          <Auswahl id="f-vbest" name="versicherung_bestand" label="Sind Sie schon versichert?" opts={["Nein, ich brauche neuen Schutz", "Ja, ich möchte vergleichen"]} />
+          <Auswahl id="f-vbeginn" name="versicherung_beginn" label="Ab wann?" opts={["So schnell wie möglich", "Zum nächsten Monat", "Zum Ablauf des alten Vertrags", "Noch offen"]} />
+        </fieldset>
       </fieldset>
 
       <fieldset className="fstep" data-step="2" hidden={step !== 2} style={{ border: 0, padding: 0, margin: 0 }}>
@@ -186,9 +253,9 @@ export default function OfferForm() {
               <option>Sonstiges</option>
             </select>
           </div>
-          <div className="field">
+          <div className="field" hidden={!istKredit}>
             <label htmlFor="f-anzahl">Anzahl der Kreditnehmer</label>
-            <select id="f-anzahl" name="kreditnehmer" defaultValue="1">
+            <select id="f-anzahl" name="kreditnehmer" defaultValue="1" disabled={!istKredit}>
               <option value="1">Eine Person</option>
               <option value="2">Zwei Personen</option>
             </select>

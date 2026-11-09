@@ -88,17 +88,19 @@
     }
   ],
   "faqNote": "Viele dieser Fragen sind am Telefon schnell beantwortet. Geht es um VL, legen Sie Ihre Gehaltsabrechnung bereit.",
-  "linksText": "Tagesgeld und Girokonto eröffnen Sie hier direkt online. Für Geld, das länger liegen bleiben soll, sprechen wir lieber vorher miteinander.",
+  "linksText": "Tagesgeld und Girokonto eröffnen Sie direkt online. Für vermögenswirksame Leistungen (VL) erstelle ich Ihnen ein persönliches Angebot.",
   "links": [
     {
       "label": "Tagesgeld vergleichen und eröffnen",
       "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=23",
-      "text": "Online-Vergleich bei Procheck24"
+      "text": "Online-Vergleich bei Procheck24",
+      "button": "Tagesgeld online eröffnen"
     },
     {
       "label": "Girokonto vergleichen und eröffnen",
       "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=3",
-      "text": "Online-Vergleich bei Procheck24"
+      "text": "Online-Vergleich bei Procheck24",
+      "button": "Girokonto online eröffnen"
     }
   ],
   "ctaTitle": "Erst die Reserve, dann alles Weitere",
@@ -107,5 +109,7 @@
     "bausparen",
     "versicherungen",
     "ratenkredit"
-  ]
+  ],
+  "anfrageLabel": "VL-Angebot anfordern",
+  "anfrageThema": "vl"
 }

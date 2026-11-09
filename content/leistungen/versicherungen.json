@@ -91,17 +91,20 @@
     "baufinanzierung",
     "ratenkredit"
   ],
-  "linksText": "Kfz-Versicherung und Auslandskrankenversicherung schließen Sie hier direkt online ab. Planen Sie einen längeren Aufenthalt im Ausland oder haben Sie Fragen zu Ihrem bestehenden Vertrag, melden Sie sich vorher bei mir.",
+  "linksText": "Kfz-Versicherung und Auslandskrankenversicherung schließen Sie direkt online ab. Für alle anderen Versicherungen fordern Sie Ihr persönliches Angebot an.",
   "links": [
     {
       "label": "Kfz-Versicherung vergleichen und abschließen",
       "href": "https://www.procheck24.de/einsurance/csp/doHomepageEntry.do?cspident=1E10D0775D7B2B72651C2A93AFEA87B5&p=4",
-      "text": "Online-Vergleich bei Procheck24"
+      "text": "Online-Vergleich bei Procheck24",
+      "button": "Kfz-Versicherung online"
     },
     {
       "label": "Auslandskrankenversicherung abschließen",
       "href": "http://www.care-concept.de/index.php?vmnr=0021490162&blanko=ja&fs=db&mail=ilonka.karras%40banken4u.de",
-      "text": "Online-Antrag bei Care Concept, meinem Partner für den Krankenschutz auf Reisen"
+      "text": "Online-Antrag bei Care Concept, meinem Partner für den Krankenschutz auf Reisen",
+      "button": "Auslandskrankenversicherung online"
     }
-  ]
+  ],
+  "anfrageThema": "versicherung"
 }

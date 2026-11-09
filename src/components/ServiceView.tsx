@@ -55,6 +55,32 @@ export default function ServiceView({ slug }: { slug: string }) {
   // Auf der Übersicht stehen die Unterseiten schon als Kacheln, deshalb unten nur Themen, die noch nicht zu sehen waren
   const related = (s.related.map((r) => services.find((x) => x.slug === r)).filter(Boolean) as ServicePage[]).filter((r) => !children.some((c) => c.slug === r.slug));
 
+  // Wege zum Abschluss: oben im Kopf, direkt darunter als Kacheln und unten im Abschluss
+  const isBau = s.group === "baufinanzierung";
+  const hub = services.find((x) => x.slug === "baufinanzierung");
+  const thema = s.anfrageThema || s.slug.split("/").pop() || "";
+  const online: { label: string; button: string; href: string; text?: string; extern: boolean }[] = isBau
+    ? hub?.angebotWidget
+      ? [{ label: "Angebot online anfordern", button: "Angebot online anfordern", href: isHub ? "#angebot-online" : "/baufinanzierung/#angebot-online", text: "Ihre Angaben gehen direkt in mein Baufinanzierungsprogramm.", extern: false }]
+      : []
+    : (s.links ?? []).map((l) => ({ label: l.label, button: l.button || l.label, href: l.href, text: l.text, extern: true }));
+  const anfrage = {
+    label: s.anfrageLabel || (isBau && online.length ? "Persönliches Angebot anfordern" : "Angebot anfordern"),
+    href: `/angebot/?thema=${encodeURIComponent(thema)}`,
+  };
+  const OnlineBtn = ({ o, cls }: { o: (typeof online)[number]; cls: string }) =>
+    o.extern ? (
+      <a className={cls} href={o.href} target="_blank" rel="noopener">
+        {o.button}
+        <IconArrow />
+      </a>
+    ) : (
+      <a className={cls} href={o.href}>
+        {o.button}
+        <IconArrow />
+      </a>
+    );
+
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -80,8 +106,57 @@ export default function ServiceView({ slug }: { slug: string }) {
         lead={s.lead}
         crumbs={crumbs}
         kicker={s.kicker}
-      />
+      >
+        {online.map((o) => (
+          <OnlineBtn key={o.href} o={o} cls="btn btn-messing btn-keep" />
+        ))}
+        <Link className={`btn ${online.length ? "btn-hell btn-keep" : "btn-messing"}`} href={anfrage.href}>
+          {anfrage.label}
+          <IconArrow />
+        </Link>
+        {online.length ? null : (
+          <a className="btn btn-hell" href={site.phoneHref}>
+            Anrufen: {site.phone}
+          </a>
+        )}
+      </PageHero>
       <main id="inhalt">
+        {online.length ? (
+          <section className="sec-go" aria-labelledby="abschluss-titel">
+            <div className="wrap go-in">
+              <div className="go-text">
+                <h2 id="abschluss-titel" className="t-h3">
+                  {isBau ? "Ihr Angebot, online oder persönlich." : "Direkt online abschließen."}
+                </h2>
+                <p>
+                  {isBau
+                    ? "Online geht es am schnellsten: Ihre Angaben landen direkt in meinem Baufinanzierungsprogramm. Lieber persönlich? Dann schicken Sie mir Ihre Eckdaten oder rufen Sie an."
+                    : s.linksText ?? "Hier können Sie direkt online abschließen. Wenn Sie vorher lieber mit mir sprechen möchten, rufen Sie mich einfach an."}
+                </p>
+              </div>
+              <div className="golinks go-cards" style={{ ["--n" as string]: online.length + 1 }}>
+                {online.map((o) => (
+                  <a key={o.href} className="is-online" href={o.href} {...(o.extern ? { target: "_blank", rel: "noopener" } : {})}>
+                    <span>
+                      <em>Online</em>
+                      <b>{o.label}</b>
+                      {o.text ? <small>{o.text}</small> : null}
+                    </span>
+                    <IconArrow />
+                  </a>
+                ))}
+                <Link href={anfrage.href}>
+                  <span>
+                    <em>Persönlich</em>
+                    <b>{anfrage.label}</b>
+                    <small>Ich prüfe Ihre Angaben persönlich und melde mich bei Ihnen.</small>
+                  </span>
+                  <IconArrow />
+                </Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
         <section className="sec">
           <div className="wrap">
             <div className="lead-block">
@@ -210,30 +285,6 @@ export default function ServiceView({ slug }: { slug: string }) {
           </div>
         </section>
 
-        {s.links?.length ? (
-          <section className="sec alt" aria-labelledby="abschluss-titel">
-            <div className="wrap">
-              <div className="sec-head">
-                <Split id="abschluss-titel" className="t-h2" text="Direkt online abschließen." />
-                <p data-reveal>
-                  {s.linksText ?? "Hier können Sie direkt online abschließen. Wenn Sie vorher lieber mit mir sprechen möchten, rufen Sie mich einfach an."}
-                </p>
-              </div>
-              <div className="golinks">
-                {s.links.map((l, i) => (
-                  <a key={l.href + i} href={l.href} target="_blank" rel="noopener" data-reveal style={{ ["--d" as string]: `${(i % 2) * 80}ms` }}>
-                    <span>
-                      <b>{l.label}</b>
-                      {l.text ? <small>{l.text}</small> : null}
-                    </span>
-                    <IconArrow />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : null}
-
         {s.steps?.length ? (
           <section className="sec dark" aria-labelledby="ablauf-titel">
             <div className="wrap">
@@ -301,8 +352,11 @@ export default function ServiceView({ slug }: { slug: string }) {
               <p data-reveal>{s.ctaText}</p>
             </div>
             <div data-reveal>
-              <Link className="btn btn-tanne" href="/angebot/">
-                Angebot anfordern
+              {online.map((o) => (
+                <OnlineBtn key={o.href} o={o} cls="btn btn-messing" />
+              ))}
+              <Link className="btn btn-tanne" href={anfrage.href}>
+                {anfrage.label}
                 <IconArrow />
               </Link>
               <a className="btn btn-linie" href={site.phoneHref}>

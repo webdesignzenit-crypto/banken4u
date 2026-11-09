@@ -51,7 +51,11 @@ export type ServicePage = {
   /** Einleitungssatz über den Abschluss-Links, passend zum Thema */
   linksText?: string;
   /** Direkte Abschlussmöglichkeiten (Rechner, Antragsstrecken der Partner) */
-  links?: { label: string; href: string; text?: string }[];
+  links?: { label: string; href: string; text?: string; /** kurze Beschriftung für den Button oben */ button?: string }[];
+  /** Beschriftung des Anfrage-Buttons, z. B. „VL-Angebot anfordern“ */
+  anfrageLabel?: string;
+  /** Thema, das im Anfrageformular vorausgewählt wird */
+  anfrageThema?: string;
   /** Link zur Angebotsanforderung beim Maklerpool (nur Baufinanzierung-Übersicht) */
   angebotLink?: string;
   /** Schlüssel des Europace-Angebotsformulars (Maklerpool), leer = eigenes Anfrageformular */
