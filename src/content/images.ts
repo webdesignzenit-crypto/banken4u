@@ -2,17 +2,17 @@ import sizes from "../../public/img/sizes.json";
 
 export type ImgKey = keyof typeof sizes;
 
-export const images: Record<string, { alt: string; pos?: string }> = {
+export const images: Record<string, { alt: string; pos?: string; fit?: boolean }> = {
   hero: { alt: "Modellhaus mit roter Giebelfront und Hausschlüssel auf einem Holztisch", pos: "100% 40%" },
   bauhub: { alt: "Hausmodell mit blauem Dach und rotem Giebel auf einem Bauplan, davor eine Lupe, dahinter ein Sparschwein", pos: "60% 40%" },
   schluessel: { alt: "Hand hält Hausschlüssel mit Anhänger in Hausform im Flur eines neuen Zuhauses", pos: "50% 40%" },
-  kauf: { alt: "Hausmodell im Querschnitt mit eingestecktem 50-Euro-Schein und Haustürschlüssel auf Auswertungen", pos: "40% 40%" },
+  kauf: { alt: "Hausmodell im Querschnitt mit eingestecktem 50-Euro-Schein und Haustürschlüssel auf Auswertungen", pos: "40% 40%", fit: true },
   neubau: { alt: "Einfamilienhaus im Rohbau: Ziegelmauerwerk mit frisch aufgestelltem Dachstuhl und Schalung vor blauem Himmel", pos: "50% 45%" },
   anschluss: { alt: "Bewohntes Einfamilienhaus mit Satteldach und Hecke im Morgenlicht", pos: "50% 50%" },
   umschuldung: { alt: "Ausgebreitete Euro-Banknoten zu 20, 100 und 200 Euro", pos: "60% 35%" },
   foerder: { alt: "Euro-Scheine, Münzen und Hausschlüssel mit Haus-Anhänger neben einem Taschenrechner", pos: "45% 50%" },
   modernisierung: { alt: "Handwerker setzt ein Solarmodul auf das Dach eines Wohnhauses", pos: "30% 30%" },
-  ratenkredit: { alt: "Handschlag nach dem Autokauf im Autohaus", pos: "50% 35%" },
+  ratenkredit: { alt: "Handschlag nach dem Autokauf im Autohaus", pos: "50% 35%", fit: true },
   bausparen: { alt: "Taschenrechner, kleines Holzhaus und orangefarbenes Sparschwein auf blauem Grund", pos: "50% 40%" },
   geldanlage: { alt: "Hand mit 50-Euro-Scheinen vor Taschenrechner und Auswertungen", pos: "50% 55%" },
   versicherungen: { alt: "Silhouette eines Menschen, der im Sonnenuntergang auf einem Felsen balanciert", pos: "45% 55%" },
@@ -50,6 +50,11 @@ export function imgSet(key: string) {
   if (key === "hero") return `${img("hero-sm.webp")} 1200w, ${img("hero-1920.webp")} 1920w, ${img("hero.webp")} 3200w`;
   if (key === "hero-m") return `${img("hero-m-sm.webp")} 900w, ${img("hero-m.webp")} 1400w`;
   return `${img(`${key}-sm.webp`)} 1200w, ${img(`${key}.webp`)} ${imgSize(key)[0]}w`;
+}
+
+/** Handy: ganzes Bild oben zeigen (statt Ausschnitt), Rest des Titelbereichs unscharf hinterlegt – für Szenen, die nur komplett verständlich sind */
+export function isFit(key: string) {
+  return !!images[key]?.fit;
 }
 
 /** Eigener Hochformat-Zuschnitt fürs Handy vorhanden? */

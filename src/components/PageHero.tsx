@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useEffect, useRef, type ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { hasPortrait, images, img as imgUrl, imgSet, imgSrc } from "@/content/images";
+import { hasPortrait, images, img as imgUrl, imgSet, imgSrc, isFit } from "@/content/images";
 import { IconArrow } from "./Icons";
 import { Siegel } from "./Siegel";
 import { site } from "@/content/site";
@@ -50,9 +50,10 @@ export default function PageHero({
   }, []);
 
   const words = title.split(" ");
+  const fit = !!img && !img.startsWith("/") && isFit(img);
 
   return (
-    <section className={img ? "phero" : "phero is-plain"} ref={root}>
+    <section className={img ? (fit ? "phero is-fit" : "phero") : "phero is-plain"} ref={root}>
       {!img ? null : img.startsWith("/") ? (
         // Hochgeladenes Bild aus dem Bearbeitungsbereich
         <img ref={pic} className="phero-img" src={img} alt="" fetchPriority="high" />
@@ -71,6 +72,11 @@ export default function PageHero({
           />
         </picture>
       )}
+      {fit && img ? (
+        <div className="phero-fit" aria-hidden="true">
+          <img src={imgUrl(`${img}-sm.webp`)} alt="" fetchPriority="high" />
+        </div>
+      ) : null}
       <Siegel />
       <div className="phero-in wrap">
         <div>
