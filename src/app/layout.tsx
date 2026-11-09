@@ -44,7 +44,7 @@ const jsonLd = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "10:00", closes: "17:00" },
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "10:00", closes: "15:00" },
   ],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "80", bestRating: "5" },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: String(site.rating).replace(",", "."), reviewCount: String(site.ratingCount).replace(/\D/g, ""), bestRating: "5" },
 };
 
 const PREVIEW = !!process.env.NEXT_PUBLIC_PREVIEW;
