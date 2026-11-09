@@ -383,6 +383,16 @@ html.js .main-over { margin-top: -100vh; margin-top: -100svh; }
   .phero-actions { width: 100%; min-width: 0; }
   .phero-actions .btn.btn-keep { display: inline-flex; white-space: normal; max-width: 100%; text-align: left; }
   .phero-in > div { min-width: 0; }
+  /* Kompakter Titelbereich, damit Überschrift, Text und Buttons zusammen auf den Bildschirm passen */
+  .phero:not(.is-plain) .crumbs { display: none; }
+  .phero:not(.is-plain) .kicker { margin-top: 0 !important; font-size: 0.88rem; }
+  .phero:not(.is-plain) .phero-title { font-size: 2.05rem; margin-top: 12px !important; }
+  .phero:not(.is-plain) .t-lead { font-size: 1rem; line-height: 1.5; margin-top: 14px; }
+  .phero:not(.is-plain) .phero-in { gap: 22px; padding-top: 120px; padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px)); }
+  /* Ohne eigene Buttons im Titelbild bleibt die Aktionsleiste sichtbar: Inhalt endet darüber */
+  .phero:not(.is-plain):not(:has(.phero-actions .btn-keep)) .phero-in { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+  .phero-actions { gap: 10px; }
+  .phero-actions .btn.btn-keep { min-height: 48px; font-size: 0.95rem; }
   .band { padding-top: 120px; }
 }
 

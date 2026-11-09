@@ -66,6 +66,8 @@ export default function Header() {
   const [barOn, setBarOn] = useState(false);
   const [mega, setMega] = useState<MegaKey>(null);
   const [sheet, setSheet] = useState(false);
+  // Handy: Aktionsleiste ausblenden, solange die Buttons im Titelbild sichtbar sind (sonst verdeckt sie diese)
+  const [heroBtns, setHeroBtns] = useState(true);
   const [group, setGroup] = useState<MegaKey>(null);
   const [megaTop, setMegaTop] = useState(70);
   const topRef = useRef<HTMLDivElement>(null);
@@ -134,6 +136,18 @@ export default function Header() {
   useEffect(() => {
     document.documentElement.classList.toggle("sheet-open", sheet);
   }, [sheet]);
+
+  useEffect(() => {
+    const el = document.querySelector(".phero-actions");
+    const hasBtn = !!el && [...el.querySelectorAll(".btn")].some((b) => getComputedStyle(b).display !== "none");
+    if (!el || !hasBtn) {
+      setHeroBtns(false);
+      return;
+    }
+    const io = new IntersectionObserver(([e]) => setHeroBtns(e.isIntersecting), { threshold: 0.01 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [pathname]);
 
   const showBar = barOn;
   const solid = mega !== null && !barOn;
@@ -260,7 +274,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={`dock${sheet ? " is-hidden" : ""}`} aria-label="Schnellkontakt">
+      <div className={`dock${sheet || heroBtns ? " is-hidden" : ""}`} aria-label="Schnellkontakt">
         <a className="dock-call" href={site.phoneHref}>
           <IconPhone />
           Anrufen
