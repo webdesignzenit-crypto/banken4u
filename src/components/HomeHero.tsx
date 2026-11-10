@@ -43,7 +43,7 @@ export default function HomeHero() {
 
   return (
     <div className="hero-wrap" ref={wrap}>
-      <section className="hero" ref={hero} aria-label="Banken4U, Baufinanzierung aus über 570 Banken">
+      <section className="hero" ref={hero} aria-label={`Banken4U, Baufinanzierung aus über ${site.banks} Banken`}>
         <picture>
           <source media={PORTRAIT} srcSet={imgSet("hero-m")} sizes="100vw" />
           <img className="hero-img" src={img("hero-1920.webp")} srcSet={imgSet("hero")} sizes="100vw" alt={images.hero.alt} fetchPriority="high" decoding="async" />

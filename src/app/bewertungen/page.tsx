@@ -84,7 +84,7 @@ export default function Page() {
               </p>
               <Split id="cta-titel" className="t-h2" text="Überzeugen Sie sich selbst." />
               <p data-reveal style={{ color: "var(--text-2)" }}>
-                Fordern Sie Ihr unverbindliches Angebot an. Ich vergleiche für Sie über 570 Banken und melde mich persönlich bei Ihnen.
+                Fordern Sie Ihr unverbindliches Angebot an. Ich vergleiche für Sie über {site.banks} Banken und melde mich persönlich bei Ihnen.
               </p>
             </div>
             <div data-reveal style={{ justifyItems: "start" }}>
